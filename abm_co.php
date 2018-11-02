@@ -73,7 +73,7 @@ if (!empty($_POST)) {
     echo '<button type="button" class="btn btn-primary  btn-sm"   onclick="cargar(\'#capa_L\',\'mostrar_comunicados.php?b='.$_SESSION['lastname'].'&n='.$_SESSION['name'].'\')">Ver Comunicados</button>';
     echo '<button type="button" class="btn btn-primary  btn-sm"   onclick="cargar(\'#capa_d\',\'mostrar_comunicados.php?a='.$_SESSION['lastname'].'&j='.$_SESSION['name'].'\')">Mis comunicados</button>';
 		}
-    if(isset($_SESSION['username']) && $_SESSION['rol']=='Docente' OR isset($_SESSION['username']) && $_SESSION['rol']=='Preceptor'){
+    if(isset($_SESSION['username']) && $_SESSION['rol']=='Docente'){
     echo '<button type="button" class="btn btn-primary  btn-sm"   onclick="cargar(\'#capa_d\',\'alta_co.php\')">Nuevo Comunicado</button>';
     echo '<button type="button" class="btn btn-primary  btn-sm"   onclick="cargar(\'#capa_L\',\'mostrar_comunicados.php?b='.$_SESSION['lastname'].'&n='.$_SESSION['name'].'\')">Ver Comunicados</button>';
     echo '<button type="button" class="btn btn-primary  btn-sm"   onclick="cargar(\'#capa_d\',\'mostrar_comunicados.php?a='.$_SESSION['lastname'].'&j='.$_SESSION['name'].'\')">Mis comunicados</button>';

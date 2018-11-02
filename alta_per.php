@@ -40,46 +40,85 @@ function mostrar(id) {
         <option value="estudiante">Estudiante</option>
         <option value="docente">Docente</option>
         <option value="directivo">Directivo</option>
-        <option value="preceptor">Preceptor</option>
      </select>
 </form>
 <div id="estudiante" style="display: none;">
-    <h2>Si eres estudiante...</h2>
+    <h2>Rellenar para estudiante</h2>
     <form action="abm_pe.php" method="post">
+        <input type="text" name="txtRol" value="Estudiante" style="display: none;">
         <label>Nombre</label>
-        <input type="text" name="nombre" />
-        <p>Centro:<br/>
-        <input type="text" name="centro" /></p>
-        <input type="submit" name="send" value="Enviar" />
+        <input type="text" name="txtNombre"><br>
+        <label>Apellido</label>
+        <input type="text" name="txtApellido"><br>
+        <label>Sexo</label><br>
+        <input type="radio" name="txtSexo" value="Masculino">Masculino<br>
+        <input type="radio" name="txtSexo" value="Femenino">Femenino<br>
+        <label>Email</label>
+        <input type="email" name="txtEmail"><br>
+        <label>Curso</label>
+        <select name="txtCurso">
+            <option selected="selected" disabled="disabled">Seleccione...</option>
+            <option value="1">Grado 1</option>
+            <option value="2">Grado 2</option>
+            <option value="3">Grado 3</option>
+            <option value="4">Grado 4</option>
+            <option value="5">Grado 5</option>
+        </select><br>
+        <label>Usuario</label>
+        <input type="text" name="txtuser"><br>
+        <label>Contraseña</label>
+        <input type="text" name="txtpasswd"><br>
+        <input type="submit" name="submit">
     </form>
 </div>
 <div id="docente" style="display: none;">
     <h2>Si eres docente...</h2>
-    <form action="index.php" method="post">
-        <p>Nombre:<br/>
-        <input type="text" name="nombre" /></p>
-        <p>Centro:<br/>
-        <input type="text" name="centro" /></p>
+    <form action="abm_pe.php" method="post">
+        <input type="text" name="txtRol" value="Docente" style="display: none;">
+        <label>Nombre</label>
+        <input type="text" name="txtNombre" /></p>
+        <label>Apellido</label>
+        <input type="text" name="txtApellido" /></p>
+        <label>Telefono</label>
+        <input type="tel" name="txtTelefono" /></p>
+        <label>Direccion</label>
+        <input type="text" name="txtDireccion" /></p>
+        <label>Curso</label>
+        <select name="txtCurso">
+            <option selected="selected" disabled="disabled">Seleccione...</option>
+            <option value="1">Grado 1</option>
+            <option value="2">Grado 2</option>
+            <option value="3">Grado 3</option>
+            <option value="4">Grado 4</option>
+            <option value="5">Grado 5</option>
+        </select><br>
+        <label>Email</label>
+        <input type="email" name="txtEmail" /></p>
+        <label>Usuario</label>
+        <input type="text" name="txtuser" /></p>
+        <label>Contraseña</label>
+        <input type="text" name="txtpasswd" /></p>
         <input type="submit" name="send" value="Enviar" />
     </form>
 </div>
 <div id="directivo" style="display: none;">
     <h2>Si eres directivo...</h2>
-    <form action="index.php" method="post">
-        <p>Nombre:<br/>
-        <input type="text" name="nombre" /></p>
-        <p>Centro:<br/>
-        <input type="text" name="centro" /></p>
-        <input type="submit" name="send" value="Enviar" />
-    </form>
-</div>
-<div id="preceptor" style="display: none;">
-    <h2>Si eres preseptor...</h2>
-    <form action="index.php" method="post">
-        <p>Nombre:<br/>
-        <input type="text" name="nombre" /></p>
-        <p>Centro:<br/>
-        <input type="text" name="centro" /></p>
+    <form action="abm_pe.php" method="post">
+        <input type="text" name="txtRol" value="Directivo" style="display: none;">
+        <label>Nombre</label>
+        <input type="text" name="txtNombre" /></p>
+        <label>Apellido</label>
+        <input type="text" name="txtApellido" /></p>
+        <label>Telefono</label>
+        <input type="tel" name="txtTelefono" /></p>
+        <label>Direccion</label>
+        <input type="text" name="txtDireccion" /></p>
+        <label>Email</label>
+        <input type="email" name="txtEmail" /></p>
+        <label>Usuario</label>
+        <input type="text" name="txtuser" /></p>
+        <label>Contraseña</label>
+        <input type="text" name="txtpasswd" /></p>
         <input type="submit" name="send" value="Enviar" />
     </form>
 </div>

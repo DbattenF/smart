@@ -1,19 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 3.1.1
--- http://www.phpmyadmin.net
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 06-09-2018 a las 21:26:03
--- Versión del servidor: 5.1.30
--- Versión de PHP: 5.2.8
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 02-11-2018 a las 23:07:13
+-- Versión del servidor: 10.1.34-MariaDB
+-- Versión de PHP: 5.6.37
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `biblio_t1`
@@ -25,8 +28,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Estructura de tabla para la tabla `carteles`
 --
 
-CREATE TABLE IF NOT EXISTS `carteles` (
-  `id_cartel` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `carteles` (
+  `id_cartel` int(11) NOT NULL,
   `categoria` varchar(25) NOT NULL DEFAULT '''AGENDA''',
   `titulo` text NOT NULL,
   `texto` text,
@@ -38,12 +41,11 @@ CREATE TABLE IF NOT EXISTS `carteles` (
   `link` varchar(128) DEFAULT NULL,
   `texto1` text,
   `texto2` text,
-  `imagen1` text,
-  PRIMARY KEY (`id_cartel`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+  `imagen1` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcar la base de datos para la tabla `carteles`
+-- Volcado de datos para la tabla `carteles`
 --
 
 INSERT INTO `carteles` (`id_cartel`, `categoria`, `titulo`, `texto`, `imagen`, `plantilla`, `v_desde`, `v_hasta`, `activo`, `link`, `texto1`, `texto2`, `imagen1`) VALUES
@@ -73,74 +75,73 @@ INSERT INTO `carteles` (`id_cartel`, `categoria`, `titulo`, `texto`, `imagen`, `
 -- Estructura de tabla para la tabla `chat`
 --
 
-CREATE TABLE IF NOT EXISTS `chat` (
-  `id` int(50) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `chat` (
+  `id` int(50) NOT NULL,
   `name` varchar(255) NOT NULL,
   `msg` varchar(255) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcar la base de datos para la tabla `chat`
+-- Volcado de datos para la tabla `chat`
 --
 
 INSERT INTO `chat` (`id`, `name`, `msg`, `date`) VALUES
-(1, 'cm', 'hola', '2017-09-15 19:11:01'),
-(2, 'cm', 'to bien ??\r\n', '2017-09-15 21:22:43'),
-(3, 'cm', 'No entiendo\r\n', '2017-10-20 10:26:33'),
-(4, 'lp', 'hola bb', '2018-04-19 18:14:52'),
-(5, 'cm', 'comoestas?\r\n', '2018-04-19 18:19:20'),
-(6, 'Lucas', 'sdasdadsfsdfs', '2018-04-19 18:59:06'),
-(7, 'ls', '8wbs88\r\n1321', '2018-04-26 21:00:44'),
-(8, '', '1231113131\r\n', '2018-04-26 21:06:09'),
-(9, 'ls', 'Hola Mundo!!!\r\n', '2018-04-26 21:13:26'),
-(10, 'ls', 'Hola Mundo!!!\r\n', '2018-04-26 21:24:48'),
-(11, 'ls', '', '2018-04-26 21:24:54'),
-(12, 'ls', '', '2018-04-26 21:24:54'),
-(13, 'ls', '', '2018-04-26 21:24:54'),
-(14, 'ls', '', '2018-04-26 21:24:55'),
-(15, 'ls', '', '2018-04-26 21:24:55'),
-(16, 'ls', '', '2018-04-26 21:26:07'),
-(17, 'ls', 'hola', '2018-04-26 21:26:24'),
-(18, 'ls', 'hola', '2018-04-26 21:26:39'),
-(19, 'ls', 'hola', '2018-04-26 21:27:37'),
-(20, 'ls', 'hola', '2018-04-26 21:27:53'),
-(21, 'ls', 'hola', '2018-04-26 21:28:10'),
-(22, 'ls', 'hola', '2018-04-26 21:30:50'),
-(23, '', 'lkhdh\r\n', '2018-05-02 13:35:56'),
-(24, '', 'hola como estas?\r\n', '2018-05-02 13:36:21'),
-(25, '', 'Hola,Â¿CÃ³mo estas?', '2018-05-02 13:36:35'),
-(26, 'fs', 'sadasd', '2018-08-23 19:29:36'),
-(27, 'fs', 'asdasd', '2018-08-23 19:29:38'),
-(28, 'fs', 'd', '2018-08-23 19:31:25'),
-(29, 'fs', 'f', '2018-08-23 19:31:27'),
-(30, 'fs', 'f', '2018-08-23 19:31:43'),
-(31, 'fs', 'f', '2018-08-23 19:31:46'),
-(32, 'fs', 'dgh', '2018-08-23 19:31:48'),
-(33, 'fs', 'dgh', '2018-08-23 19:32:35'),
-(34, 'fs', '', '2018-08-23 19:32:43'),
-(35, 'fs', '', '2018-08-23 19:33:57'),
-(36, 'fs', '', '2018-08-23 19:33:59'),
-(37, 'fs', '', '2018-08-23 19:38:22'),
-(38, 'fs', 'wqe', '2018-08-23 19:41:46'),
-(39, 'fs', 's', '2018-08-23 19:42:42'),
-(40, 'fs', 's', '2018-08-23 19:42:43'),
-(41, 'fs', 's', '2018-08-23 19:42:44'),
-(42, 'fs', 's', '2018-08-23 19:42:45'),
-(43, 'fs', 'asd', '2018-08-23 19:42:52'),
-(44, 'fs', 'asdsa', '2018-08-23 19:48:31'),
-(45, 'fs', '', '2018-08-23 19:48:37'),
-(46, 'fs', '', '2018-08-23 19:49:26'),
-(47, 'fs', '', '2018-08-23 19:49:35'),
-(48, 'fs', '', '2018-08-23 19:49:54'),
-(49, 'fs', '', '2018-08-23 19:50:13'),
-(50, 'fs', '', '2018-08-23 19:50:46'),
-(51, 'fs', '', '2018-08-23 19:51:24'),
-(52, 'fs', '', '2018-08-23 19:51:46'),
-(53, 'fs', '', '2018-08-23 19:51:59'),
-(54, 'fs', '', '2018-08-23 19:53:16'),
-(55, 'fs', '', '2018-09-06 18:38:27');
+(1, 'cm', 'hola', '2017-09-15 22:11:01'),
+(2, 'cm', 'to bien ??\r\n', '2017-09-16 00:22:43'),
+(3, 'cm', 'No entiendo\r\n', '2017-10-20 13:26:33'),
+(4, 'lp', 'hola bb', '2018-04-19 21:14:52'),
+(5, 'cm', 'comoestas?\r\n', '2018-04-19 21:19:20'),
+(6, 'Lucas', 'sdasdadsfsdfs', '2018-04-19 21:59:06'),
+(7, 'ls', '8wbs88\r\n1321', '2018-04-27 00:00:44'),
+(8, '', '1231113131\r\n', '2018-04-27 00:06:09'),
+(9, 'ls', 'Hola Mundo!!!\r\n', '2018-04-27 00:13:26'),
+(10, 'ls', 'Hola Mundo!!!\r\n', '2018-04-27 00:24:48'),
+(11, 'ls', '', '2018-04-27 00:24:54'),
+(12, 'ls', '', '2018-04-27 00:24:54'),
+(13, 'ls', '', '2018-04-27 00:24:54'),
+(14, 'ls', '', '2018-04-27 00:24:55'),
+(15, 'ls', '', '2018-04-27 00:24:55'),
+(16, 'ls', '', '2018-04-27 00:26:07'),
+(17, 'ls', 'hola', '2018-04-27 00:26:24'),
+(18, 'ls', 'hola', '2018-04-27 00:26:39'),
+(19, 'ls', 'hola', '2018-04-27 00:27:37'),
+(20, 'ls', 'hola', '2018-04-27 00:27:53'),
+(21, 'ls', 'hola', '2018-04-27 00:28:10'),
+(22, 'ls', 'hola', '2018-04-27 00:30:50'),
+(23, '', 'lkhdh\r\n', '2018-05-02 16:35:56'),
+(24, '', 'hola como estas?\r\n', '2018-05-02 16:36:21'),
+(25, '', 'Hola,Â¿CÃ³mo estas?', '2018-05-02 16:36:35'),
+(26, 'fs', 'sadasd', '2018-08-23 22:29:36'),
+(27, 'fs', 'asdasd', '2018-08-23 22:29:38'),
+(28, 'fs', 'd', '2018-08-23 22:31:25'),
+(29, 'fs', 'f', '2018-08-23 22:31:27'),
+(30, 'fs', 'f', '2018-08-23 22:31:43'),
+(31, 'fs', 'f', '2018-08-23 22:31:46'),
+(32, 'fs', 'dgh', '2018-08-23 22:31:48'),
+(33, 'fs', 'dgh', '2018-08-23 22:32:35'),
+(34, 'fs', '', '2018-08-23 22:32:43'),
+(35, 'fs', '', '2018-08-23 22:33:57'),
+(36, 'fs', '', '2018-08-23 22:33:59'),
+(37, 'fs', '', '2018-08-23 22:38:22'),
+(38, 'fs', 'wqe', '2018-08-23 22:41:46'),
+(39, 'fs', 's', '2018-08-23 22:42:42'),
+(40, 'fs', 's', '2018-08-23 22:42:43'),
+(41, 'fs', 's', '2018-08-23 22:42:44'),
+(42, 'fs', 's', '2018-08-23 22:42:45'),
+(43, 'fs', 'asd', '2018-08-23 22:42:52'),
+(44, 'fs', 'asdsa', '2018-08-23 22:48:31'),
+(45, 'fs', '', '2018-08-23 22:48:37'),
+(46, 'fs', '', '2018-08-23 22:49:26'),
+(47, 'fs', '', '2018-08-23 22:49:35'),
+(48, 'fs', '', '2018-08-23 22:49:54'),
+(49, 'fs', '', '2018-08-23 22:50:13'),
+(50, 'fs', '', '2018-08-23 22:50:46'),
+(51, 'fs', '', '2018-08-23 22:51:24'),
+(52, 'fs', '', '2018-08-23 22:51:46'),
+(53, 'fs', '', '2018-08-23 22:51:59'),
+(54, 'fs', '', '2018-08-23 22:53:16'),
+(55, 'fs', '', '2018-09-06 21:38:27');
 
 -- --------------------------------------------------------
 
@@ -148,24 +149,47 @@ INSERT INTO `chat` (`id`, `name`, `msg`, `date`) VALUES
 -- Estructura de tabla para la tabla `comunicados`
 --
 
-CREATE TABLE IF NOT EXISTS `comunicados` (
-  `id_comunicado` int(100) NOT NULL AUTO_INCREMENT,
-  `emisor` text NOT NULL,
-  `reseptor` text NOT NULL,
+CREATE TABLE `comunicados` (
+  `id_comunicado` int(100) NOT NULL,
+  `a_emisor` text NOT NULL,
+  `n_emisor` text NOT NULL,
+  `a_receptor` text NOT NULL,
+  `n_receptor` text NOT NULL,
   `titulo` varchar(100) NOT NULL,
   `texto` varchar(100) NOT NULL,
   `fecha` varchar(10) NOT NULL,
-  `activo` int(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_comunicado`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+  `activo` int(1) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Volcar la base de datos para la tabla `comunicados`
+-- Volcado de datos para la tabla `comunicados`
 --
 
-INSERT INTO `comunicados` (`id_comunicado`, `emisor`, `reseptor`, `titulo`, `texto`, `fecha`, `activo`) VALUES
-(9, 'administrador', 'Docente', 'Inscripciones Abiertas', 'Estan abiertas las inscripciones		   ', '2018-09-06', 1),
-(10, 'administrador', 'Docente', 'Funcionaaaaaaaaaaaaaaa', '		   ', '2018-09-06', 1);
+INSERT INTO `comunicados` (`id_comunicado`, `a_emisor`, `n_emisor`, `a_receptor`, `n_receptor`, `titulo`, `texto`, `fecha`, `activo`) VALUES
+(32, 'Faverio', 'Santiago ', 'Perconti Gutierrez', 'Milo', 'asdasd', 'asdsad', '2018-09-11', 1),
+(30, 'Faverio', 'Santiago ', 'Spandre', 'Jorge', 'asdasdasdasdasd', 'asdasdasdasdsad', '2018-09-11', 1),
+(31, 'Spandre', 'Jorge', 'Perconti Gutierrez', 'Milo', 'Soy Jorge', 'asdasdasdas', '2018-09-11', 1),
+(29, 'Faverio', 'Santiago ', 'Perconti Gutierrez', 'Milo', 'Espero funcione', 'asdasdasd', '2018-09-11', 1),
+(33, 'Faverio', 'Santiago ', 'Perconti Gutierrez', 'Milo', 'sadasd', 'dasdasd', '2018-09-11', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `directivos`
+--
+
+CREATE TABLE `directivos` (
+  `id` int(100) NOT NULL,
+  `nombre` text NOT NULL,
+  `apellido` text NOT NULL,
+  `telefono` varchar(40) NOT NULL,
+  `direccion` varchar(122) NOT NULL,
+  `rol` varchar(30) NOT NULL,
+  `curso` varchar(30) DEFAULT 'ESPERA',
+  `email` varchar(40) NOT NULL,
+  `user` varchar(70) NOT NULL,
+  `password` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -173,16 +197,10 @@ INSERT INTO `comunicados` (`id_comunicado`, `emisor`, `reseptor`, `titulo`, `tex
 -- Estructura de tabla para la tabla `estados`
 --
 
-CREATE TABLE IF NOT EXISTS `estados` (
+CREATE TABLE `estados` (
   `codigo` int(2) NOT NULL,
-  `descripcion` text COLLATE latin1_spanish_ci NOT NULL,
-  PRIMARY KEY (`codigo`)
+  `descripcion` text COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
-
---
--- Volcar la base de datos para la tabla `estados`
---
-
 
 -- --------------------------------------------------------
 
@@ -190,74 +208,16 @@ CREATE TABLE IF NOT EXISTS `estados` (
 -- Estructura de tabla para la tabla `estudiante`
 --
 
-CREATE TABLE IF NOT EXISTS `estudiante` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `estudiante` (
+  `id` int(11) NOT NULL,
   `nombre` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
   `apellido` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
   `sexo` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
-  `matricula` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
-  `carrera` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
+  `curso` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
   `email` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   `user` varchar(50) COLLATE latin1_spanish_ci NOT NULL DEFAULT '''''',
-  `passwd` varchar(32) COLLATE latin1_spanish_ci NOT NULL DEFAULT '''''',
-  `rol` varchar(32) COLLATE latin1_spanish_ci NOT NULL DEFAULT '''''',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=154 ;
-
---
--- Volcar la base de datos para la tabla `estudiante`
---
-
-INSERT INTO `estudiante` (`id`, `nombre`, `apellido`, `sexo`, `matricula`, `carrera`, `email`, `user`, `passwd`, `rol`) VALUES
-(1, 'Julio Jose', 'Lopez', 'Masculino', '8976456', 'Multimedia', '', '', '', ''''''),
-(4, 'luis', 'Perconti', 'Masculino', '11951164', 'Software', '', '', '', ''''''),
-(6, 'Pedro Andres', 'Guerra', 'Femenino', '', 'Software', '', '', '', ''''''),
-(22, 'Jose Segundo', 'AguanteMiguel', 'Masculino', '11111111', 'Mecatronica', '', '', '', ''''''),
-(38, 'Nestor', 'Esposito', 'Masculino', '26123432', 'Multimedia', '', '', '', ''''''),
-(39, 'Jorge', 'Alperin', 'Masculino', '21324432', 'Redes', '', '', '', ''''''),
-(40, 'B. B.', 'King', 'Masculino', '2000211', 'Software', '', '', '', ''''''),
-(50, 'Fredy', 'King', 'Masculino', '2000876', 'Mecatronica', '', '', '', ''''''),
-(61, 'albert', 'King', 'Masculino', '2132890', 'Software', '', '', '', ''''''),
-(66, 'Florencia', 'Galvan', 'Femenino', '', 'Software', '', '', '', ''''''),
-(67, 'Nat', 'King Cole', 'Femenino', '2000876', 'Software', '', '', '', ''''''),
-(68, 'Milo', 'Perconti', 'Masculino', '', 'Software', '', '', '', ''''''),
-(69, 'Lucia', 'gutierre', 'Femenino', '3232323245', 'Redes', '', '', '', ''''''),
-(77, 'Rosa Isabel', 'Correa', 'Femenino', '14323434', 'Software', '', '', '', ''''''),
-(83, 'Alfredo', 'Malvicini', 'Masculino', '14398969', 'Software', '', '', '', ''''''),
-(85, 'Fabian', 'Malvicini', 'Masculino', '14398969', 'Software', '', '', '', ''''''),
-(100, 'Claudia', 'Malvicini', 'Femenino', '14398969', 'Software', '', '', '', ''''''),
-(109, 'Sergio Fabian', 'Malvicini', 'Masculino', '18342588', 'Mecatronica', '', '', '', ''''''),
-(110, 'Sofia', 'Malvicini', 'Femenino', '37453766', 'Mecatronica', '', '', '', ''''''),
-(111, 'Alejo Fabian', 'Malvicini', 'Masculino', '39877678', 'Redes', '', '', '', ''''''),
-(112, 'Agustin Sergio', 'Malvicini', 'Masculino', '44398969', 'Mecatronica', '', '', '', ''''''),
-(113, 'Pepe', 'King', 'Masculino', '24355231', 'Mecatronica', '', '', '', ''''''),
-(114, 'Ñata', 'King', 'Femenino', '24355231', 'Redes', '', '', '', ''''''),
-(115, 'Lucile', 'King', 'Femenino', '24355231', 'Mecatronica', '', '', '', ''''''),
-(116, 'Lucia Soledad', 'Malvicini', 'Femenino', '42322433', 'Mecatronica', '', '', '', ''''''),
-(119, 'Hetito Julio', 'Marucci', 'Masculino', '12453432', 'Mecatronica', '', '', '', ''''''),
-(123, 'Karina', 'Guerra', 'Femenino', '2234456', 'Software', '', '', '', ''''''),
-(125, 'Patricia Maria', 'Guerra', 'Femenino', '23432234', 'Software', '', '', '', ''''''),
-(126, 'Maria Jose', 'Marucci', 'Femenino', '123432345', 'Mecatronica', '', '', '', ''''''),
-(127, 'Pancho', 'Gutierrez', 'Masculino', '32456765', 'Multimedia', '', '', '', ''''''),
-(129, 'Ivancito', 'Marucci', 'Masculino', '33467865', 'Mecatronica', '', '', '', ''''''),
-(132, 'Marieta', 'Marucci', 'Femenino', '', 'Software', '', '', '', ''''''),
-(133, 'Masimo Hetor', 'Marucci', 'Masculino', '45654432', 'Software', '', '', '', ''''''),
-(134, 'Silvio', 'Gomez', 'Femenino', '', 'Software', '', '', '', ''''''),
-(135, 'Mario', ' Etchegoyen', 'Masculino', '23456777', 'Software', '', '', '', ''''''),
-(136, 'Ignacio', ' Etchegoyen', 'Masculino', '23456789', 'Software', '', '', '', ''''''),
-(137, 'German', 'Perconti', 'Masculino', '', 'Software', '', '', '', ''''''),
-(139, 'Bebu', 'Gomez', 'Femenino', '', 'Multimedia', '', '', '', ''''''),
-(140, 'Juje', 'Gomez', 'Femenino', '', 'Multimedia', '', '', '', ''''''),
-(141, 'Caro', 'Gomez', 'Femenino', '', 'Multimedia', '', '', '', ''''''),
-(142, 'Fran', 'Gomez', 'Masculino', '', 'Software', '', '', '', ''''''),
-(143, 'Pini', 'Perconti de Gomez', 'Femenino', '31211213', 'Software', '', '', '', ''''''),
-(144, 'Luis Alberto', 'Spinetta', 'Masculino', 'IDOLO', 'Software', '', '', '', ''''''),
-(145, 'Mariana', 'de Marucci', 'Femenino', '', 'Software', '', '', '', ''''''),
-(146, 'Hermann', 'Hesse', 'Masculino', '1000000', 'Software', '', '', '', ''''''),
-(147, 'Horacio', 'Fontova', 'Masculino', '', 'Mecatronica', '', '', '', ''''''),
-(150, 'Santiago', 'Maldonado', 'Masculino', '12121212', 'Redes', '', '''''', '''''', ''''''),
-(152, 'Fernando', 'Perconti', 'Masculino', '32323232', 'Multimedia', '', '''''', '''''', ''''''),
-(153, 'Ramona *Monchi*', 'Perconti', 'Femenino', '33', 'Mecatronica', '', '''''', '''''', '''''');
+  `passwd` varchar(32) COLLATE latin1_spanish_ci NOT NULL DEFAULT ''''''
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -265,8 +225,8 @@ INSERT INTO `estudiante` (`id`, `nombre`, `apellido`, `sexo`, `matricula`, `carr
 -- Estructura de tabla para la tabla `libros_d`
 --
 
-CREATE TABLE IF NOT EXISTS `libros_d` (
-  `id_libro` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `libros_d` (
+  `id_libro` int(11) NOT NULL,
   `Autor` varchar(64) NOT NULL,
   `Titulo` varchar(128) NOT NULL,
   `edicion` varchar(32) NOT NULL,
@@ -276,14 +236,8 @@ CREATE TABLE IF NOT EXISTS `libros_d` (
   `Materia` varchar(32) NOT NULL,
   `Comentario` varchar(128) NOT NULL,
   `Archivo` varchar(128) NOT NULL,
-  `tipo` varchar(32) NOT NULL,
-  PRIMARY KEY (`id_libro`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Volcar la base de datos para la tabla `libros_d`
---
-
+  `tipo` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -291,17 +245,16 @@ CREATE TABLE IF NOT EXISTS `libros_d` (
 -- Estructura de tabla para la tabla `log_user`
 --
 
-CREATE TABLE IF NOT EXISTS `log_user` (
-  `id_log` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usuario` smallint(6) unsigned NOT NULL,
+CREATE TABLE `log_user` (
+  `id_log` int(11) NOT NULL,
+  `id_usuario` smallint(6) UNSIGNED NOT NULL,
   `fecha` date NOT NULL DEFAULT '2000-01-01',
   `hora` time NOT NULL DEFAULT '00:00:00',
-  `ip` varchar(25) COLLATE latin1_spanish_ci DEFAULT NULL,
-  PRIMARY KEY (`id_log`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=107 ;
+  `ip` varchar(25) COLLATE latin1_spanish_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `log_user`
+-- Volcado de datos para la tabla `log_user`
 --
 
 INSERT INTO `log_user` (`id_log`, `id_usuario`, `fecha`, `hora`, `ip`) VALUES
@@ -415,38 +368,44 @@ INSERT INTO `log_user` (`id_log`, `id_usuario`, `fecha`, `hora`, `ip`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `padres`
+--
+
+CREATE TABLE `padres` (
+  `id` int(10) NOT NULL,
+  `dni` int(12) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `apellido` varchar(30) NOT NULL,
+  `alumno` varchar(40) NOT NULL,
+  `telefono` int(12) NOT NULL,
+  `direccione` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL DEFAULT 'ESPERA',
+  `user` varchar(30) NOT NULL,
+  `password` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `personas`
 --
 
-CREATE TABLE IF NOT EXISTS `personas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `personas` (
+  `id` int(11) NOT NULL,
   `nombre` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
   `apellido` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
-  `sexo` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
-  `dni` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `carrera` varchar(20) COLLATE latin1_spanish_ci DEFAULT NULL,
-  `telefono` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
   `email` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
   `user` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   `passwd` varchar(32) COLLATE latin1_spanish_ci NOT NULL,
-  `rol` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `user` (`user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=164 ;
+  `rol` varchar(20) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `personas`
+-- Volcado de datos para la tabla `personas`
 --
 
-INSERT INTO `personas` (`id`, `nombre`, `apellido`, `sexo`, `dni`, `carrera`, `telefono`, `email`, `user`, `passwd`, `rol`) VALUES
-(152, 'Milo', 'Perconti Gutierrez', 'Masculino', '45454545', 'Mecatronica', '42564177', 'milo@milo', 'pm', '81dc9bdb52d04dc20036dbd8313ed055', 'Docente'),
-(153, 'Lucas', 'Spandre', 'Masculino', '42427583', 'First Certificated E', '1141751842', 'spandrelucas@hotmail.com', 'sl', '81dc9bdb52d04dc20036dbd8313ed055', 'Estudiante'),
-(155, 'Francisco', 'Figueroa', 'Masculino', '', 'Software', '', '', 'ff', '81dc9bdb52d04dc20036dbd8313ed055', 'Estudiante'),
-(159, 'Santiago ', 'Faverio', 'Masculino', '', 'Software', '', 'spandrejorge@yahoo.com.ar', 'fs', '81dc9bdb52d04dc20036dbd8313ed055', 'administrador'),
-(160, 'Cintia', 'Gonzalez', 'Femenino', '', 'Software', '', '', 'gc', '81dc9bdb52d04dc20036dbd8313ed055', 'Estudiante'),
-(161, 'Walter', 'Paz', 'Masculino', '23165487', '6to AÃ±o', '1122334455', 'ajfbabf@vjadbvb.com', 'pw', '81dc9bdb52d04dc20036dbd8313ed055', 'Preceptor'),
-(162, 'Jorge', 'Spandre', 'Masculino', '20415413', '', '1159785697', 'spandrejorge@yahoo.com.ar', 'sj', '81dc9bdb52d04dc20036dbd8313ed055', 'Padre'),
-(163, '', '', '', NULL, NULL, NULL, 'dylan@hotmail.com', 'dj', '81dc9bdb52d04dc20036dbd8313ed055', 'estudiante');
+INSERT INTO `personas` (`id`, `nombre`, `apellido`, `email`, `user`, `passwd`, `rol`) VALUES
+(169, 'Santiago', 'Faverio', 'cuervo.santi@hotmail.com', 'fs', '81dc9bdb52d04dc20036dbd8313ed055', 'administrador');
 
 -- --------------------------------------------------------
 
@@ -454,15 +413,14 @@ INSERT INTO `personas` (`id`, `nombre`, `apellido`, `sexo`, `dni`, `carrera`, `t
 -- Estructura de tabla para la tabla `roles`
 --
 
-CREATE TABLE IF NOT EXISTS `roles` (
-  `id_rol` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `roles` (
+  `id_rol` int(11) NOT NULL,
   `rol` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
-  `descripcion` varchar(128) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'Puede :',
-  PRIMARY KEY (`id_rol`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci AUTO_INCREMENT=6 ;
+  `descripcion` varchar(128) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'Puede :'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Volcar la base de datos para la tabla `roles`
+-- Volcado de datos para la tabla `roles`
 --
 
 INSERT INTO `roles` (`id_rol`, `rol`, `descripcion`) VALUES
@@ -471,3 +429,144 @@ INSERT INTO `roles` (`id_rol`, `rol`, `descripcion`) VALUES
 (3, 'Programador Senior', 'Realiza tareas de desarollo'),
 (4, 'Docente', 'Supervisa un proyecto de su materia\r\nuno y solo uno'),
 (5, 'Directivo', 'Puede ver informes y generar tickets para este proyecto');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `carteles`
+--
+ALTER TABLE `carteles`
+  ADD PRIMARY KEY (`id_cartel`);
+
+--
+-- Indices de la tabla `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `comunicados`
+--
+ALTER TABLE `comunicados`
+  ADD PRIMARY KEY (`id_comunicado`);
+
+--
+-- Indices de la tabla `directivos`
+--
+ALTER TABLE `directivos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `estados`
+--
+ALTER TABLE `estados`
+  ADD PRIMARY KEY (`codigo`);
+
+--
+-- Indices de la tabla `estudiante`
+--
+ALTER TABLE `estudiante`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `libros_d`
+--
+ALTER TABLE `libros_d`
+  ADD PRIMARY KEY (`id_libro`);
+
+--
+-- Indices de la tabla `log_user`
+--
+ALTER TABLE `log_user`
+  ADD PRIMARY KEY (`id_log`);
+
+--
+-- Indices de la tabla `padres`
+--
+ALTER TABLE `padres`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQUE` (`dni`);
+
+--
+-- Indices de la tabla `personas`
+--
+ALTER TABLE `personas`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `user` (`user`);
+
+--
+-- Indices de la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id_rol`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `carteles`
+--
+ALTER TABLE `carteles`
+  MODIFY `id_cartel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT de la tabla `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
+-- AUTO_INCREMENT de la tabla `comunicados`
+--
+ALTER TABLE `comunicados`
+  MODIFY `id_comunicado` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT de la tabla `directivos`
+--
+ALTER TABLE `directivos`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `estudiante`
+--
+ALTER TABLE `estudiante`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
+
+--
+-- AUTO_INCREMENT de la tabla `libros_d`
+--
+ALTER TABLE `libros_d`
+  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `log_user`
+--
+ALTER TABLE `log_user`
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+
+--
+-- AUTO_INCREMENT de la tabla `padres`
+--
+ALTER TABLE `padres`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `personas`
+--
+ALTER TABLE `personas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+
+--
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

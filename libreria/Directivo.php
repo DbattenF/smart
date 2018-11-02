@@ -1,22 +1,20 @@
-<?php
+<?php 
 include_once("motor.php");
 
-//ESTE CODIGO FUE MIGRADO DESDE LA EXTENSION ANTIGUA MYSQL A LA NUEVA MYSQLi
-//UTILIZANDO LA INTERFAZ ORIENTADA A OBJETOS (http://php.net/manual/es/mysqli.quickstart.dual-interface.php)
-
-class Estudiante{
+class Directivo{
 	public $nombre;
 	public $apellido;
-	public $sexo;
+	public $telefono;
+	public $direccion;
+	public $rol;
 	public $curso;
 	public $email;
 	public $user;
 	public $passwd;
-	public $rol;
  
  function guardar(){  // crea el estudiante cargado en los atributos
-   $sql="insert into estudiante(nombre,apellido,sexo,curso,email,user,passwd)
-   values('$this->nombre','$this->apellido','$this->sexo','$this->curso','$this->email','$this->user','$this->passwd')";
+   $sql="insert into directivos(nombre,apellido,telefono,direccion,rol,curso,email,user,password)
+   values('$this->nombre','$this->apellido','$this->telefono','$this->direccion','$this->rol','$this->curso','$this->email','$this->user','$this->passwd')";
    //mysql_query($sql);
    $objConn = new Conexion();
    $objConn->enlace->query($sql);
@@ -78,3 +76,4 @@ function traer_datos($nro=0) // declara el constructor, si trae el numero de est
  }
  
  }
+?>

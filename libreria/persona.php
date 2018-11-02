@@ -8,23 +8,15 @@ class Persona{
  public $id;
  public $nombre;
  public $apellido;
- public $sexo;
- public $dni;
- public $carrera;
  public $telefono;
  public $email;
  public $user;
  public $passwd;
  public $rol;
- static $recs;
  
  function guardar(){  // crea la Persona
-    
-   $pass=md5($this->passwd);
-   $sql="insert into personas(nombre,apellido,sexo,dni,carrera,telefono,email,user,passwd,rol)
-   values('$this->nombre','$this->apellido','$this->sexo','$this->dni','$this->carrera',
-   '$this->telefono','$this->email','$this->user','$pass','$this->rol')";
-   //mysql_query($sql);
+   $sql="insert into personas(nombre,apellido,email,user,passwd,rol)
+   values('$this->nombre','$this->apellido','$this->email','$this->user','$this->passwd','$this->rol')";
    $objConn = new Conexion();
    $objConn->enlace->query($sql);
  }

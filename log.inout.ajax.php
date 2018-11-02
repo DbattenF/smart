@@ -1,10 +1,9 @@
 <?php
-include_once("libreria/config.php");
 session_start();
 if ( !isset($_SESSION['username']) && !isset($_SESSION['userid']) ){
-    if ( @$idcnx = @mysql_connect(DB_HOST,DB_USER,DB_PASS) ){
+    if ( @$idcnx = @mysql_connect('localhost','root','') ){
              
-        if ( @mysql_select_db(DB_NAME,$idcnx) ){
+        if ( @mysql_select_db('biblio_t1',$idcnx) ){
        //LOGIN
 	   if (isset($_POST['login_username'])){    
             $sql = 'SELECT user,passwd,id,rol,apellido,nombre FROM personas WHERE user="' . $_POST['login_username']. '" && passwd="' . md5($_POST['login_userpass']) . '" LIMIT 1';
@@ -34,11 +33,9 @@ if ( !isset($_SESSION['username']) && !isset($_SESSION['userid']) ){
 		
 	//REGISTRO
 	   if (isset($_POST['rec_username'])){    
-            $sql = 'insert into personas (user,passwd,email,rol) 
-			   values("' . $_POST['rec_username']. 
-			      '","' . md5($_POST['rec_userpass']) .
+            $sql = 'insert into padres (user,passwd,email,rol) values("' . $_POST['rec_username'].'","' . md5($_POST['rec_userpass']) .
 				  '","' . $_POST['rec_email'] .
-				  '","estudiante")';
+				  '")';
             @mysql_query($sql);
                 
             echo 1;
