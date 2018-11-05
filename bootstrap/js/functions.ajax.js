@@ -95,12 +95,12 @@ $('#rec_userbttn').click(function(){
         $('.box-info, .box-success, .box-alert, .box-error').slideUp(timeSlide);
 //configuramos y creamos la condicion
         setTimeout(function(){
-            if ( $('#rec_username').val() != "" && $('#rec_userpass').val() != "" && $('#rec_userpass').val() == $('#rec_userpass_1').val() && $('#rec_email').val() != "" ){
+            if ( $('#rec_username').val() != "" && $('#rec_userpass').val() != "" && $('#rec_email').val() != "" ){
                  
                 $.ajax({
                     type: 'POST',
                     url: 'log.inout.ajax.php',
-                    data: 'rec_username=' + $('#rec_username').val() + '&rec_userpass=' + $('#rec_userpass').val() + '&rec_email=' + $('#rec_email').val(),
+                    data: 'rec_username=' + $('#rec_username').val() + '&rec_userpass=' + $('#rec_userpass').val() + '&rec_email=' + $('#rec_email').val() + '&rec_nombre=' + $('#rec_nombre').val() + '&rec_apellido=' + $('#rec_apellido').val() + '&rec_telefono=' + $('#rec_telefono').val() + '&rec_alumno=' + $('#rec_alumno').val() + '&rec_direccion=' + $('#rec_direccion').val(),
                      
 //si la sesion se inicia correctamente presentamos el mensaje
                     success:function(msj){

@@ -16,20 +16,40 @@
         <form method="post" action="">
         <table cellpadding="0" cellspacing="0" border="0">
             <tr>
-                <td>Usuario:</td>
+                <td>Dni</td>
+                <td><input type="text" name="rec_dni" id="rec_dni" /></td>
+            </tr>
+            <tr>
+                <td>Nombre</td>
+                <td><input type="text" name="rec_nombre" id="rec_nombre" /></td>
+            </tr>
+            <tr>
+                <td>Apellido</td>
+                <td><input type="text" name="rec_apellido" id="rec_apellido" /></td>
+            </tr>
+            <tr>
+                <td>Nombre del alumno</td>
+                <td><input type="text" name="rec_alumno" id="rec_alumno" /></td>
+            </tr>
+            <tr>
+                <td>Telefono</td>
+                <td><input type="text" name="rec_telefono" id="rec_telefono" /></td>
+            </tr>
+            <tr>
+                <td>Direccion</td>
+                <td><input type="text" name="rec_direccion" id="rec_direccion" /></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="rec_email" id="rec_email" /></td>
+            </tr>
+            <tr>
+                <td>Usuario</td>
                 <td><input type="text" name="rec_username" id="rec_username" /></td>
             </tr>
             <tr>
-                <td>Contraseña:</td>
+                <td>Contraseña</td>
                 <td><input type="password" name="rec_userpass" id="rec_userpass" /></td>
-            </tr>
-			<tr>
-                <td>Repetir Contraseña:</td>
-                <td><input type="password" name="rec_userpass_1" id="rec_userpass_1" /></td>
-            </tr>
-			<tr>
-                <td>e-mail:</td>
-                <td><input type="text" name="rec_email" id="rec_email" /></td>
             </tr>
             <tr>
                 <td colspan="2" align="right"><span class="timer" id="timer"></span><button id="rec_userbttn">Registrar</button></td>

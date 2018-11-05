@@ -15,7 +15,7 @@ if ( !isset($_SESSION['username']) && !isset($_SESSION['userid']) ){
                          
                     $_SESSION['username']   = $user['user'];
                     $_SESSION['userid'] = $user['id'];
-					$_SESSION['rol'] = $user['rol'];
+					          $_SESSION['rol'] = $user['rol'];
                     $_SESSION['lastname'] = $user['apellido'];
                     $_SESSION['name'] = $user['nombre'];
 					echo 1;
@@ -28,14 +28,25 @@ if ( !isset($_SESSION['username']) && !isset($_SESSION['userid']) ){
                 echo 0;
                  
         }
-		
-
-		
+			
 	//REGISTRO
 	   if (isset($_POST['rec_username'])){    
-            $sql = 'insert into padres (user,passwd,email,rol) values("' . $_POST['rec_username'].'","' . md5($_POST['rec_userpass']) .
-				  '","' . $_POST['rec_email'] .
-				  '")';
+            $sql = 'insert into padres (dni,nombre,apellido,alumno,telefono,direccion,email,user,passwd) values("' . $_POST['rec_dni'].'","' . $_POST['rec_nombre'] .
+				  '","' . $_POST['rec_apellido'] .
+				  '","' . $_POST['rec_alumno'] .
+                  '","' . $_POST['rec_telefono'] .
+                  '","' . $_POST['rec_direccion'] .
+                  '","' . $_POST['rec_email'] .
+                  '","' . $_POST['rec_username'] .
+                  '","' . md5($_POST['rec_userpass']) .
+                  '")';
+            @mysql_query($sql);
+            $sql = 'insert into personas (dni,nombre,apellido,alumno,telefono,direccion,email,user,passwd) values("'. $_POST['rec_nombre'] .
+                  '","' . $_POST['rec_apellido'] .
+                  '","' . $_POST['rec_email'] .
+                  '","' . $_POST['rec_username'] .
+                  '","' . md5($_POST['rec_userpass']) .
+                  '","Padre")';
             @mysql_query($sql);
                 
             echo 1;
