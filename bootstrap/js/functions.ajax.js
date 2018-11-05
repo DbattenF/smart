@@ -100,7 +100,7 @@ $('#rec_userbttn').click(function(){
                 $.ajax({
                     type: 'POST',
                     url: 'log.inout.ajax.php',
-                    data: 'rec_username=' + $('#rec_username').val() + '&rec_userpass=' + $('#rec_userpass').val() + '&rec_email=' + $('#rec_email').val() + '&rec_nombre=' + $('#rec_nombre').val() + '&rec_apellido=' + $('#rec_apellido').val() + '&rec_telefono=' + $('#rec_telefono').val() + '&rec_alumno=' + $('#rec_alumno').val() + '&rec_direccion=' + $('#rec_direccion').val(),
+                    data: 'rec_username=' + $('#rec_username').val() + '&rec_userpass=' + $('#rec_userpass').val() + '&rec_email=' + $('#rec_email').val() + '&rec_nombre=' + $('#rec_nombre').val() + '&rec_apellido=' + $('#rec_apellido').val() + '&rec_telefono=' + $('#rec_telefono').val() + '&rec_alumno=' + $('#rec_alumno').val() + '&rec_direccion=' + $('#rec_direccion').val() + '&rec_dni=' + $('#rec_dni').val(),
                      
 //si la sesion se inicia correctamente presentamos el mensaje
                     success:function(msj){
