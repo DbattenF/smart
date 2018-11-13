@@ -29,7 +29,11 @@
             </tr>
             <tr>
                 <td>Nombre del alumno</td>
-                <td><input type="text" name="rec_alumno" id="rec_alumno" /></td>
+                <td><input type="text" name="rec_nom_alum" id="rec_nom_alum" /></td>
+            </tr>
+            <tr>
+                <td>Apellido del alumno</td>
+                <td><input type="text" name="rec_apel_alum" id="rec_apel_alum" /></td>
             </tr>
             <tr>
                 <td>Telefono</td>
@@ -41,7 +45,7 @@
             </tr>
             <tr>
                 <td>Email</td>
-                <td><input type="text" name="rec_email" id="rec_email" /></td>
+                <td><input type="email" name="rec_email" id="rec_email" /></td>
             </tr>
             <tr>
                 <td>Usuario</td>

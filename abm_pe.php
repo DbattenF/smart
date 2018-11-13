@@ -21,6 +21,7 @@ $telefono="";
 $email="";
 $user="";
 $rol="";
+
 if (!empty($_POST)){
 	$rol=$_POST['txtRol'];
 	if ($rol=='estudiante'){

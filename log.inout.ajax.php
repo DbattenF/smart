@@ -1,55 +1,63 @@
 <?php
 session_start();
 if ( !isset($_SESSION['username']) && !isset($_SESSION['userid']) ){
-    if ( @$idcnx = @mysqli_connect('localhost','root','','biblio_t1') ){
+    if ( @$idcnx = mysqli_connect('localhost','root','','biblio_t1') ){
              
        //LOGIN
-	   if (isset($_POST['login_username'])){    
-            $sql = 'SELECT user,passwd,id,rol,apellido,nombre FROM personas WHERE user="' . $_POST['login_username']. '" && passwd="' . md5($_POST['login_userpass']) . '" LIMIT 1';
+	   if (isset($_POST['login_username'])){   
+            $sql = 'SELECT * FROM personas WHERE user="' . $_POST['login_username'] . '" AND passwd="' . md5($_POST['login_userpass']) . '"';
             //echo $sql;
-			if ( @$res = @mysqli_query($sql) ){	
-                if ( @mysqli_num_rows($res) == 1 ){
+			if ( @$res = mysqli_query($idcnx,$sql) ){	
+                if ( mysqli_num_rows($res) == 1 ){
                         
-                    $user = @mysqli_fetch_array($res);
+                    $user = mysqli_fetch_array($res);
                          
                     $_SESSION['username']   = $user['user'];
                     $_SESSION['userid'] = $user['id'];
 					          $_SESSION['rol'] = $user['rol'];
                     $_SESSION['lastname'] = $user['apellido'];
                     $_SESSION['name'] = $user['nombre'];
-					echo 1;
+					          echo 1;
                     //echo $user['rol'];     
                 }
                 else
-                    echo 0;
+                    echo "No hay resultados";
             }
             else
-                echo 0;
+                echo "Fallo la consulta";
                  
         }
 			
 	//REGISTRO
-	   if (isset($_POST['rec_username'])){    
-            $sql = 'insert into padres (dni,nombre,apellido,alumno,telefono,direccion,email,user,password) values("' . $_POST['rec_dni'].'","' . $_POST['rec_nombre'] .
+	   if (isset($_POST['rec_username'])){
+          $sql = 'SELECT id FROM estudiante WHERE nombre="'. $_POST['rec_nom_alum'] .'" AND apellido="'. $_POST['rec_apel_alum'] .'" ';
+          if( $res = mysqli_query($idcnx,$sql)){
+            if( mysqli_num_rows($res)==1){
+                 $user = mysqli_fetch_array($res);
+                 $id_alum = $user['id'];
+ 
+            $sql = 'INSERT into padres (id_alum,dni,nombre,apellido,nom_alum,apel_alum,telefono,direccion,email,user,password) values("' . $id_alum .'","' . $_POST['rec_dni'].'","' . $_POST['rec_nombre'] .
 				  '","' . $_POST['rec_apellido'] .
-				  '","' . $_POST['rec_alumno'] .
+				  '","' . $_POST['rec_nom_alum'] .
+                  '","' . $_POST['rec_apel_alum'] .
                   '","' . $_POST['rec_telefono'] .
                   '","' . $_POST['rec_direccion'] .
                   '","' . $_POST['rec_email'] .
                   '","' . $_POST['rec_username'] .
                   '","' . md5($_POST['rec_userpass']) .
                   '")';
-            @mysqli_query($sql);
-            $sql = 'insert into personas (nombre,apellido,email,user,passwd) values("'. $_POST['rec_nombre'] .
+            mysqli_query($sql);
+            $sql = 'INSERT into personas (nombre,apellido,email,user,passwd) values("'. $_POST['rec_nombre'] .
                   '","' . $_POST['rec_apellido'] .
                   '","' . $_POST['rec_email'] .
                   '","' . $_POST['rec_username'] .
                   '","' . md5($_POST['rec_userpass']) .
                   '","Padre")';
-            @mysqli_query($sql);
+            mysqli_query($sql);
                 
             echo 1;
-                 
+              }
+          }     
         }
 		
 		

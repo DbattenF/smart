@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2018 a las 23:07:13
+-- Tiempo de generación: 13-11-2018 a las 21:05:08
 -- Versión del servidor: 10.1.34-MariaDB
 -- Versión de PHP: 5.6.37
 
@@ -378,7 +378,7 @@ CREATE TABLE `padres` (
   `apellido` varchar(30) NOT NULL,
   `alumno` varchar(40) NOT NULL,
   `telefono` int(12) NOT NULL,
-  `direccione` varchar(30) NOT NULL,
+  `direccion` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL DEFAULT 'ESPERA',
   `user` varchar(30) NOT NULL,
   `password` varchar(70) NOT NULL
@@ -528,13 +528,13 @@ ALTER TABLE `comunicados`
 -- AUTO_INCREMENT de la tabla `directivos`
 --
 ALTER TABLE `directivos`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `estudiante`
 --
 ALTER TABLE `estudiante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `libros_d`

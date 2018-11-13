@@ -15,7 +15,7 @@ class Estudiante{
 	public $rol;
  
  function guardar(){  // crea el estudiante cargado en los atributos
-   $sql="insert into estudiante(nombre,apellido,sexo,curso,email,user,passwd)
+   $sql="INSERT into estudiante(nombre,apellido,sexo,curso,email,user,passwd)
    values('$this->nombre','$this->apellido','$this->sexo','$this->curso','$this->email','$this->user','$this->passwd')";
    //mysql_query($sql);
    $objConn = new Conexion();
@@ -24,10 +24,10 @@ class Estudiante{
  
  function actualizar($nro=0)	// actualiza el estudiante cargado en los atributos
 	{
-			$sql="update estudiante set nombre='$this->nombre', apellido='$this->apellido',sexo='$this->sexo',matricula='$this->matricula',carrera='$this->carrera' where id = $nro";
-			//mysql_query($sql); // ejecuta la consulta para actualizar
-			$objConn = new Conexion();
-            $objConn->enlace->query($sql);
+	$sql="update estudiante set nombre='$this->nombre', apellido='$this->apellido',sexo='$this->sexo',matricula='$this->matricula',carrera='$this->carrera' where id = $nro";
+	//mysql_query($sql); // ejecuta la consulta para actualizar
+	$objConn = new Conexion();
+    $objConn->enlace->query($sql);
             			
 	}
 	
