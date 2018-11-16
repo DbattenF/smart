@@ -5,7 +5,7 @@
  * Usese cómo mas le convenga no elimine estas líneas (http://www.bloguero-ec.com)
 */
 *{
-    font-family: "Trebuchet MS", Arial, Sans-serif;
+    font-family: Arial, "Trebuchet MS", Sans-serif;
     margin: 0px;
     padding: 0px;
     border: 0px;
@@ -18,9 +18,12 @@
 body{
     font-size: 11px;
     background-color: #fff;
-    color: #777;
 }
- 
+
+p{
+    color: #000000;
+}
+
 #allContent{
     display: block;
     position: absolute;
@@ -36,7 +39,7 @@ body{
     padding: 10px;
 }
  
-#alertBoxes{
+#alertBoxes-login, #alertBoxes-reg{
     display: block;
     width: 300px;
     text-align: left;
@@ -47,13 +50,13 @@ body{
     display: block;
     width: 300px;
     border: 1px solid #eaeaea;
-    background-color: #fafafa;
+    background-color: #454e9d;
     /*text-align: left;*/
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
 }
  
-.loginBlock form input[type=text], .loginBlock form input[type=password]{
+.loginBlock form input[type=text], .loginBlock form input[type=password], .loginBlock form input[type=email]{
     display: inline-block;
     margin: 5px;
     border: 1px solid #dadada;

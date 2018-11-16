@@ -40,11 +40,11 @@ pre {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/Underground.jpg');
+    background-image: url('images/degbru.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
-    opacity: 0.75;
+    opacity: 0.80;
     filter:alpha(opacity=50);
 }
 </style>
@@ -62,12 +62,10 @@ pre {
 
 
 		<!--<li><a href="cartelera.php">Cartelera</a></li>-->
-		<li><a href="abm_li.php">Libros</a></li>
 		<?php 
 		if (isset($_SESSION['username']) && $_SESSION['rol']=='administrador'){
 		 echo '<li><a href="abm_pe.php">Usuarios</a></li>';
 		 echo '<li><a href="abm_ca.php">Carteles</a></li>';
-     echo '<li><a href="abm_ta.php">Tareas</a></li>';
       echo '<li><a href="abm_co.php">Comunicaciones</a></li>';
 		}
 		?>
@@ -75,14 +73,14 @@ pre {
 	  <?php 
     if (isset($_SESSION['username']) && $_SESSION['rol']=='Preceptor'){
      echo '<li><a href="abm_pe.php">Usuarios</a></li>';
-     echo '<li><a href="abm_ta.php">Tareas</a></li>';
      echo '<li><a href="abm_co.php">Comunicaciones</a></li>';
     }
     ?>
 
 	  <?php 
     if (isset($_SESSION['username']) && $_SESSION['rol']=='Docente'){
-     echo '<li><a href="abm_ta.php">Tareas</a></li>';
+     echo '<li><a href="abm_pe.php">Usuarios</a></li>';
+     echo '<li><a href="abm_li.php">Libros</a></li>';
      echo '<li><a href="abm_co.php">Comunicaciones</a></li>';
     }
     ?>
@@ -95,7 +93,7 @@ pre {
 
     <?php 
     if (isset($_SESSION['username']) && $_SESSION['rol']=='Estudiante'){
-     echo '<li><a href="abm_ta.php">Tareas</a></li>';
+     echo '<li><a href="abm_li.php">Libros</a></li>';
      echo '<li><a href="abm_co.php">Comunicaciones</a></li>';
     }
     ?>
@@ -113,15 +111,14 @@ pre {
 <?php
 	  if (!isset($_SESSION['username'])){
 	    echo '	  
-	        <li><a href="registro.php"  data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
+	        <li><a href="registro.php"  data-toggle="modal" data-target="#myModal-reg"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
              ';
         echo '	  
-	        <li><a href="login.php" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	        <li><a href="login.php" data-toggle="modal" data-target="#myModal-login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
              ';
 		  }	 
 	  else{
 	    echo '	  
-		    <li><a href="abm_co.php">Chat</a></li>
 	        <li><a href="logout.php" ><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
              ';
 	       }
@@ -140,7 +137,26 @@ pre {
   
  <!-- Modal -->
  
-<div id="myModal" class="modal fade" role="dialog">
+<div id="myModal-reg" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cabezal de Usuario</h4>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div id="myModal-login" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->

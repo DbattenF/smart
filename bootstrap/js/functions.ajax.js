@@ -32,7 +32,7 @@ $(document).ready(function(){
                     success:function(msj){
                         if ( msj == 1 ){
 						//if ( msj == 'administrador' ){
-                            $('#alertBoxes').html('<div class="box-success"></div>');
+                            $('#alertBoxes-login').html('<div class="box-success"></div>');
                             $('.box-success').hide(0).html('Espera un momento…');
                             $('.box-success').slideDown(timeSlide);
                             setTimeout(function(){
@@ -43,7 +43,7 @@ $(document).ready(function(){
                          
 //caso contrario los datos son incorrectos
                         else{
-                            $('#alertBoxes').html('<div class="box-error"></div>');
+                            $('#alertBoxes-login').html('<div class="box-error"></div>');
                             $('.box-error').hide(0).html('Lo sentimos, pero los datos son incorrectos: ' + msj);
                             $('.box-error').slideDown(timeSlide);
 							
@@ -53,7 +53,7 @@ $(document).ready(function(){
 //si se pierden los datos presentamos error de ejecucion.
                     error:function(){
                         $('#timer').fadeOut(300);
-                        $('#alertBoxes').html('<div class="box-error"></div>');
+                        $('#alertBoxes-login').html('<div class="box-error"></div>');
                         $('.box-error').hide(0).html('Ha ocurrido un error durante la ejecución');
                         $('.box-error').slideDown(timeSlide);
                     }
@@ -63,7 +63,7 @@ $(document).ready(function(){
              
 //caso cantrario si los campos estan vacios debemos llenarlos
             else{
-                $('#alertBoxes').html('<div class="box-error"></div>');
+                $('#alertBoxes-login').html('<div class="box-error"></div>');
                 $('.box-error').hide(0).html('Los campos estan vacios');
                 $('.box-error').slideDown(timeSlide);
                 $('#timer').fadeOut(300);
@@ -100,12 +100,14 @@ $('#rec_userbttn').click(function(){
                 $.ajax({
                     type: 'POST',
                     url: 'log.inout.ajax.php',
-                    data: 'rec_username=' + $('#rec_username').val() + '&rec_userpass=' + $('#rec_userpass').val() + '&rec_email=' + $('#rec_email').val() + '&rec_nombre=' + $('#rec_nombre').val() + '&rec_apellido=' + $('#rec_apellido').val() + '&rec_telefono=' + $('#rec_telefono').val() + '&rec_alumno=' + $('#rec_alumno').val() + '&rec_direccion=' + $('#rec_direccion').val() + '&rec_dni=' + $('#rec_dni').val() + '&rec_nom_alum=' + $('#rec_nom_alum').val() + '&rec_apel_alum=' + $('#rec_apel_alum').val(),
+                    data: 'rec_username=' + $('#rec_username').val() + '&rec_userpass=' + $('#rec_userpass').val() + '&rec_email=' + $('#rec_email').val()
+                     + '&rec_nombre=' + $('#rec_nombre').val() + '&rec_apellido=' + $('#rec_apellido').val() + '&rec_telefono=' + $('#rec_telefono').val()
+                     + '&rec_direccion=' + $('#rec_direccion').val() + '&rec_dni=' + $('#rec_dni').val() + '&rec_nom_alum=' + $('#rec_nom_alum').val() + '&rec_apel_alum=' + $('#rec_apel_alum').val(),
                      
 //si la sesion se inicia correctamente presentamos el mensaje
                     success:function(msj){
                         if ( msj == 1 ){
-						    $('#alertBoxes').html('<div class="box-success"></div>');
+						    $('#alertBoxes-reg').html('<div class="box-success"></div>');
                             $('.box-success').hide(0).html('Espera un momento…');
                             $('.box-success').slideDown(timeSlide);
                             setTimeout(function(){
@@ -116,7 +118,7 @@ $('#rec_userbttn').click(function(){
                          
 //caso contrario los datos son incorrectos
                         else{
-                            $('#alertBoxes').html('<div class="box-error"></div>');
+                            $('#alertBoxes-reg').html('<div class="box-error"></div>');
                             $('.box-error').hide(0).html('Lo sentimos, pero los datos son incorrectos: ' + msj);
                             $('.box-error').slideDown(timeSlide);
 							
@@ -126,7 +128,7 @@ $('#rec_userbttn').click(function(){
 //si se pierden los datos presentamos error de ejecucion.
                     error:function(){
                         $('#timer').fadeOut(300);
-                        $('#alertBoxes').html('<div class="box-error"></div>');
+                        $('#alertBoxes-reg').html('<div class="box-error"></div>');
                         $('.box-error').hide(0).html('Ha ocurrido un error durante la ejecución');
                         $('.box-error').slideDown(timeSlide);
                     }
@@ -136,7 +138,7 @@ $('#rec_userbttn').click(function(){
              
 //caso cantrario si los campos estan vacios debemos llenarlos
             else{
-                $('#alertBoxes').html('<div class="box-error"></div>');
+                $('#alertBoxes-reg').html('<div class="box-error"></div>');
                 $('.box-error').hide(0).html('Los campos estan vacios o Faltan Datos');
                 $('.box-error').slideDown(timeSlide);
                 $('#timer').fadeOut(300);

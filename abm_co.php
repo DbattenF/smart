@@ -68,7 +68,7 @@ if (!empty($_POST)) {
       <ul class="nav navbar-nav" style="padding-top: 10px;padding-bottom: 0px;">
 
 	  <?php 
-		if (isset($_SESSION['username']) && $_SESSION['rol']=='administrador' OR isset($_SESSION['username']) && $_SESSION['rol']=='Padre' OR isset($_SESSION['username']) && $_SESSION['rol']=='Directivo'){
+		if (isset($_SESSION['username']) && $_SESSION['rol']=='administrador' OR isset($_SESSION['username']) && $_SESSION['rol']=='Padre' OR isset($_SESSION['username']) && $_SESSION['rol']=='Directivo' OR isset($_SESSION['username']) && $_SESSION['rol']=='Estudiante'){
 		 echo '<button type="button" class="btn btn-primary  btn-sm"   onclick="cargar(\'#capa_d\',\'alta_co.php\')">Nuevo Comunicado</button>';
     echo '<button type="button" class="btn btn-primary  btn-sm"   onclick="cargar(\'#capa_L\',\'mostrar_comunicados.php?b='.$_SESSION['lastname'].'&n='.$_SESSION['name'].'\')">Ver Comunicados</button>';
     echo '<button type="button" class="btn btn-primary  btn-sm"   onclick="cargar(\'#capa_d\',\'mostrar_comunicados.php?a='.$_SESSION['lastname'].'&j='.$_SESSION['name'].'\')">Mis comunicados</button>';

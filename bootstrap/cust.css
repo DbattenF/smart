@@ -1,5 +1,5 @@
 .navbar-inverse {
-    background-color: #c2c2a3
+    background-color: #3746C1
 }
 
 .navbar  {
@@ -7,20 +7,20 @@
 }
 
 .navbar-inverse {
-    border-color: #c2c2a3
+    border-color: #1a2cc0
 }
 .navbar-default {
-    border-color: #c2c2a3
+    border-color: #5D69D4
 }
 
 .navbar-default {
-    background-color: #c2c2a3
+    background-color: #454e9d
 }
 
 .navbar-inverse .navbar-nav>.active>a:hover,
 .navbar-inverse .navbar-nav>li>a:hover,
 .navbar-inverse .navbar-nav>li>a:focus {
-    background-color: #7a7a52
+    background-color: #727ADC
 }
 
 .navbar-inverse .navbar-nav>.active>a,
@@ -44,7 +44,7 @@
 }
 
 .navbar-inverse .navbar-brand:hover {
-    color: #131F05
+    color: #FFFE00
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -65,7 +65,7 @@
 
 .navbar-inverse .navbar-nav>.active>a:hover,
 .navbar-inverse .navbar-nav>.active>a:focus {
-    color: #65DE1F
+    color: #727ADC
 }
 
 .navbar2 {

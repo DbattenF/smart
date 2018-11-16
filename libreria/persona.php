@@ -73,7 +73,7 @@ function traer_datos($nro=0) // declara el constructor, si trae el numero de per
  
  
  static function buscar($str){
-    $sql="select * from personas where carrera like '%$str%' or user like '%$str%' or nombre like '%$str%' or apellido like '%$str%' or id='$str' or dni='$str'";
+    $sql="select * from personas where user like '%$str%' or nombre like '%$str%' or apellido like '%$str%' or id='$str' or email like '%$str%' or rol like '%$str%'";
     //$rs=mysql_query($sql);
 	$objConn = new Conexion();
 	$rs=$objConn->enlace->query($sql);

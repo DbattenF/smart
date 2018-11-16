@@ -15,7 +15,7 @@
     </head>
     <body><div id="allContent"><table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%"><tr><td align="center" valign="middle" height="100%" width="100%">
          
-        <div id="alertBoxes"></div>
+        <div id="alertBoxes-login"></div>
         <span class="loginBlock"><span class="inner">
             <?php
 if ( isset($_SESSION['username']) && isset($_SESSION['userid']) && $_SESSION['username'] != '' && $_SESSION['userid'] != '0' ){

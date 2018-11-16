@@ -65,44 +65,43 @@ if (!empty($_POST)){
 	$datos->passwd=md5($_POST['txtpasswd']);		
 	$datos->guardar();
 }
-/*	if ($operacion == 'actualizar' && isset($_GET['id_pers'])){
-		$persona->nombre=$_POST['txtNombre'];
-		$persona->apellido=$_POST['txtApellido'];
-		$persona->sexo=$_POST['txtSexo'];
-		$persona->dni=$_POST['txtDni'];
-		$persona->carrera=$_POST['txtCarrera'];
-		$persona->telefono=$_POST['txtTelefono'];
-		$persona->email=$_POST['txtEmail'];
-		$persona->user=$_POST['txtUser'];
-		$persona->rol=$_POST['txtRol'];
-		if($_POST['txtPass'] != "" && $_POST['txtPass1'] != "" && ($_POST['txtPass'] == $_POST['txtPass1'])){
-		  $persona->passwd=$_POST['txtPass'];
-		}
-        else{
-		  $persona->passwd="";
-		}
-		
-		$persona->actualizar($_GET['id_pers']);
+if ($operacion == 'actualizar' && isset($_GET['id_pers'])){
+	$persona->nombre=$_POST['txtNombre'];
+	$persona->apellido=$_POST['txtApellido'];
+	$persona->sexo=$_POST['txtSexo'];
+	$persona->dni=$_POST['txtDni'];
+	$persona->carrera=$_POST['txtCarrera'];
+	$persona->telefono=$_POST['txtTelefono'];
+	$persona->email=$_POST['txtEmail'];
+	$persona->user=$_POST['txtUser'];
+	$persona->rol=$_POST['txtRol'];
+	if($_POST['txtPass'] != "" && $_POST['txtPass1'] != "" && ($_POST['txtPass'] == $_POST['txtPass1'])){
+	  $persona->passwd=$_POST['txtPass'];
 	}
-	if ($operacion == 'borrar' && isset($_GET['id_pers'])){
-	    //echo '3-eliminar';
-		$persona->borrar($_GET['id_pers']);
+    else{
+	  $persona->passwd="";
 	}
-    if ($operacion == 'edicion' && isset($_GET['id_usuario'])) {
-        //echo '3-edicion';
-        
-        $id_usuario = $_GET['id_usuario'];
+	
+	$persona->actualizar($_GET['id_pers']);
+}
+if ($operacion == 'borrar' && isset($_GET['id_pers'])){
+    //echo '3-eliminar';
+	$persona->borrar($_GET['id_pers']);
+}
+if ($operacion == 'edicion' && isset($_GET['id_usuario'])) {
+    //echo '3-edicion';
+    
+    $id_usuario = $_GET['id_usuario'];
 
-        $datos=Persona::traer_datos($id_usuario);
+    $datos=Persona::traer_datos($id_usuario);
 
-        $nombre = $datos['¨nombre'];
-        $apellido = $datos['apellido'];
-        $sexo = $datos['sexo'];
-        $dni = $datos['dni'];
-        $carrera = $datos['carrera'];
-    }
+    $nombre = $datos['¨nombre'];
+    $apellido = $datos['apellido'];
+    $sexo = $datos['sexo'];
+    $dni = $datos['dni'];
+    $carrera = $datos['carrera'];
+}
    
-}*/
 ?>
  
 <script src="bootstrap/js/funciones_p.js"></script>

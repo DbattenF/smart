@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2018 a las 21:05:08
--- Versión del servidor: 10.1.34-MariaDB
--- Versión de PHP: 5.6.37
+-- Tiempo de generación: 16-11-2018 a las 01:14:14
+-- Versión del servidor: 10.1.32-MariaDB
+-- Versión de PHP: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -51,23 +51,23 @@ CREATE TABLE `carteles` (
 INSERT INTO `carteles` (`id_cartel`, `categoria`, `titulo`, `texto`, `imagen`, `plantilla`, `v_desde`, `v_hasta`, `activo`, `link`, `texto1`, `texto2`, `imagen1`) VALUES
 (1, 'Portada', 'Entrega de examenes Finales:', 'Sres Tutores: \r\n                     Se les comunica que los examenes finales realizados el sabado 02/06/2018 fueron evaluados y pronto les llegaran las notas por medio del cuaderno de comunicaciones de los alumnos... ', '', 3, '', '', 1, '', '		', '				   		                            Â¡Muchas Gracias!', 'Important.png'),
 (3, 'Portada', 'Muestra Educativa', '				   				   Los trabajos realizados durante el ciclo lectivo son expuestos en la escuela .Pueden venir los chicos de todas partes a disfrutar de este evento unico en su tipo.		   		   ', '', 3, '', '', 1, '', '	   ', '', 'MuestraEducativa.jpg'),
-(5, 'Portada', 'MUESTRA ESCOLAR', 'MUESTRA EN LA ESCUELA  DE PROYECTOS REALIZADOS PORRANTE EL CICLO LECTIVO', 'Educacion.jpg', 3, '', '', 1, 'https://www.smartinstitutes.com', '', '', 'EjemploTOP.png'),
-(6, 'Calendario', 'FIESTA FIN DE CURSO', 'Entrega de dipolmas etc etc', 'ElFlaco.png', 2, '15 de diciembre', '15 de diciembre', 1, '', NULL, NULL, NULL),
+(5, 'Portada', 'MUESTRA ESCOLAR', 'MUESTRA EN LA ESCUELA  DE PROYECTOS REALIZADOS PORRANTE EL CICLO LECTIVO', 'Educacion.jpg', 3, '', '', 0, 'https://www.smartinstitutes.com', '', '', 'EjemploTOP.png'),
+(6, 'Calendario', 'FIESTA FIN DE CURSO', 'Entrega de dipolmas etc etc', 'ElFlaco.png', 2, '15 de diciembre', '15 de diciembre', 0, '', '', '', ''),
 (7, 'Eventos', 'Cumple del Flaco', '', 'ElFlaco.png', 0, '03 noviembre', '', 0, '', '', '', ''),
-(10, 'Musica', 'Muddy Waters', '				   				   McKinley Morganfield (Rolling Fork, Misisipi, 4 de abril de 1913-Westmont, Illinois, 30 de abril de 1983), más conocido como Muddy Waters, fue un músico de blues estadounidense, generalmente considerado el padre del Chicago blues. Su figura y su sonido fueron, del mismo modo, una de las máximas inspiraciones para la escena del blues británico, que comenzó a despuntar en el Reino Unido hacia principios de la década de 1960.\r\n\r\nMuddy Waters ha sido ubicado en el puesto # 17 de la lista de los más grandes artistas de todos los tiempos realizado por la revista Rolling Stone.		   		   ', '250px-Muddy_Waters_(blues_musician)-cropped.jpg', 0, '4 de abril de 1913', '30 de abril de 1983', 1, '', '				   				   		   		   ', '				   				   		   		   ', ''),
-(11, 'Humor', 'Mafalda', 'El dibujante argentino Joaquín Salvador Lavado, Quino, es mucho más que el padre de Mafalda. Es el rey del humor inteligente que pellizca, tratado desde la ternura, el respecto y la sensibilidad social. Lleva 54 años analizando el mundo, denunciando las injusticias, criticando a los poderosos y sus estructuras, apoyando a los desvalidos y siendo el cronista de una evolución histórica cuyo futuro no considera que sea muy prometedor, tal y como declara en una entrevista a Público.   		   ', 'tiramafalda.jpg', 3, '', '', 1, 'http://blogs.publico.es/comics/568/el-genial-quino/', '', '', ''),
-(12, 'Humor', 'Patoruzito', 'Pamperito: Es el flete o el pingo de Patoruzito, es muy fiel a él y puede sentir su presencia. Cuando escucha su voz se pone muy alegre y siempre va corriendo a él. Es tan valiente como su amo.\r\nPatoruzito: ', 'personajesdepatoruzito.jpg', 0, '  ', '  ', 1, '', 'Protagonista de esta historieta es el más valiente, fiel a sus convicciones y siempre del lado de la ley. Está dispuesto a ayudar a encerrar en la cárcel a los bandidos, suele hacer muchas donaciones, generalmente al asilo de ancianos.\r\nIsidorito: Otro de los protagonistas de esta revista, aunque no esté en todas. Su presencia siempre nos hace reir, es divertido, miedoso y le gusta hacerse el vivo y siempre salir ganando. Siempre en las situaciones de riesgo quiere convencer al indio para volverse y hacer de cuenta como que no pasó nada.\r\nCoronel Cañones: Es el tío de Isidorito, es muy estricto y al igual que Patoruzito siempre está al lado de la ley. Siempre trata de enderezar a Iisidorito.\r\nChupamiel: Es el nieto de Chiquizuel, en una revista mencionaba que si Patoruzito no pasaba las pruebas para ser cacique, él sería el cacique ya que así *lo indicaban las reglas de la tribu*. Le gusta mucho comer miel, siempre se lo ve con un pote de miel en la mano.\r\nChiquizuel: Abuelo de Chupamiel, es el más anciano y el brujo de la tribu. Patoruzito le prohibió la entrada a sus tierras, pero muchas veces está presente para hacer de las suyas y aprovecha que su sobrino si puede ir, entonces va de incógnito.\r\nÑancul: Trabaja para Patoruzito, aunque ya son como amigos porque siempre está a su lado y lo aprecia mucho.\r\nChacha: Es la nodriza de Patoruzito, cuando él nació Patoruzek le encargó a Chacha que ayudará en el cuidado del niño. Hace unas empanadas realmente deliciosas, y está soltera aunque en una edición se encontraba enamorada del dueño de una hacienda vecina.', '', ''),
-(13, 'Otros', 'Pruebita', '				   				   				   				   		 texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto		   		   		   		   ', 'cuerpo.jpg', 3, 'TODAS LAS VOCES', '...TODAS', 1, '', '				   Otro Texto * Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *    		   		   ', 'MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto *    ', 'header.png'),
-(14, '', 'Repuestos para el mecanico', '				   				   Los mas variados repuestos para autos-motos-camiones   		   ', '123.png', 2, '', '', 1, 'http://mercadolibre.com', '				   				   		   Bombas de agua - correas - alternadores		   ', '				   				   		   		   ', ''),
-(15, 'Musica', 'Luis Salinas', '¡El es de otro mundo!', 'salinas_2.jpg', 0, '', '', 1, '', 'Su carrera internacional comenzó  grabando un disco en Suecia,  luego dos en EE.UU. para el sello GRP con la  producción de Tommy Li Puma y Ricky Peterson (Productor de Al Jarreau, George  Benson, Miles Davis, entre otros).\r\nSu carrera artística y discográfica se  ha ido consolidando en los principales escenarios del mundo: el UMEA en Suecia,  el Montreux Jazz Festival en Suiza, Festival Patrimonio de Córcega en Francia,  Palabra de Guitarra Latina – Gira por España y Portugal; también se presentó  con su propuesta en Milán, Italia, entre  otros importantes escenarios y festivales.', '				   				   				   				Chucho Valdez  dice  Luis fue invitado a Centroamérica por el gran Chucho Valdez y tocó frente  a una audiencia de 30.000 personas en La Habana, Cuba.\r\nsobre Luis: Dudo que pueda haber dos guitarristas en el mundo que puedan  tocar y conocer tan bien la guitarra como Luis Salinas. ¡El es de otro mundo!		   	   				   				   				   		   		   		   		   		   		   		   ', 'salinas_1.jpg'),
-(17, 'Musica', 'Jimi» Hendrix ', 'James Marshall «Jimi» Hendrix (nacido Johnny Allen Hendrix ) fue un guitarrista, cantante y compositor estadounidense. A pesar de que su carrera solo duró cuatro años, es considerado uno de los guitarristas más influyentes de la historia del rock y uno de los músicos más famosos del siglo XX. El Salón de la Fama del Rock and Roll le describe como «indiscutiblemente el músico más grande de la historia del rock».1', 'Jimi_Hendrix_1967.png', 3, '27 de noviembre de 1', '18 de septiembre de ', 1, '', 'James Marshall «Jimi» Hendrix (nacido Johnny Allen Hendrix ) fue un guitarrista, cantante y compositor estadounidense. A pesar de que su carrera solo duró cuatro años, es considerado uno de los guitarristas más influyentes de la historia del rock y uno de los músicos más famosos del siglo XX. El Salón de la Fama del Rock and Roll le describe como «indiscutiblemente el músico más grande de la historia del rock».1', 'James Marshall «Jimi» Hendrix (nacido Johnny Allen Hendrix ) fue un guitarrista, cantante y compositor estadounidense. A pesar de que su carrera solo duró cuatro años, es considerado uno de los guitarristas más influyentes de la historia del rock y uno de los músicos más famosos del siglo XX. El Salón de la Fama del Rock and Roll le describe como «indiscutiblemente el músico más grande de la historia del rock».1', ''),
-(19, 'Deportes', 'Copa Libertadores', '		   ', 'cuerpo.jpg', 0, '', '', 1, '', '		   ', '		   ', 'header.png'),
-(20, 'Deportes', 'COPA ARGENTINA', '	PARTICIPAN TODAS LAS CAtegorias de la afa	   ', '', 2, 'SEMIFIANL ATL TUCUMA', 'LANUS', 1, 'http://www.afa.com', '		   ', '		   ', 'cumple.png'),
-(22, 'Portada', 'Inscripciones Abiertas 2018', 'Sres. Tutores: \r\n                       Se les informa que a partir de hoy Lunes 21/05/2018 estarÃ¡n abiertas las inscripciones de todos aquellos que deseen aprender en nuestras instalaciones o vÃ­a online ', '', 3, '', '', 1, 'https://www.smartinstitutes.com', '		   ', '		   ', 'Inscript.jpg'),
-(23, 'Portada', 'Ya se me estan acabando las ideas nene', 'Auto\r\n', 'autos.jpg', 3, '', '', 1, '', '', '		   ', ''),
-(24, 'Portada', 'srwhj4et5wujw462u4i2uh', '3umn536n53 bv57g5u5454gregokehq vgvuioerhviohe0oihgvio23hi0 gh03i4yhgb0i3i0hbv0i3h4ibh304ibjoefh0ibh3i0 rnbonrjh0ibhhjs kohb0ivhwri0hi0bg 0irwehbi0hwri0b h0iehwr0ihbi0 rhwi0hb09iehwi0bh i0erhb0iheri0bhi0er hbihr		   ', 'header.png', 3, '', '', 1, '', '3umn536n53bv57g5u54 54gre gokehqvgvuioerh viohe0oihgvio23hi0g h03i4yhgb0i3i 0hbv0i3h4ibh304ibjoefh0 ibh3i0rnbonrjh0ibhh jskohb0ivhwri0hi0bg0irw ehbi0hwri0 bh0iehwr0ihbi0rh wi0hb09iehwi0bhi0er hb0iheri0bhi0erhbihr		   ', '3umn53 6n53bv57g5u54 54gregokehqv gvuioerhvi ohe0oihgvio23hi0g h03i4yhgb0i3i0hbv0 i3h4ibh304ibjoefh0i bh3i0rnbonrjh0ibhhjskohb0i vhwri0hi0bg0irwehb i0hwri0bh0iehwr0ih bi0rhwi0hb09iehwi 0bhi0erhb0iheri0bhi0erhbihr		   ', 'header.png'),
-(25, 'Portada', 'HOOLA!! COMO ESTAN??', '	Bienvenidos a la pagina web de Nuestro instituto,espero que les guste y que nos pongan un 10 [Mensaje subliminal XD] Y ahora algo random:	   ', 'descarga.jpg', 3, '', '', 1, '', '		   ', '		   ', 'Hola.png'),
-(26, 'Logo', '', '		   ', 'autos.jpg', 0, '', '', 1, '', '		   ', '		   ', '');
+(10, 'Musica', 'Muddy Waters', '				   				   McKinley Morganfield (Rolling Fork, Misisipi, 4 de abril de 1913-Westmont, Illinois, 30 de abril de 1983), mï¿½s conocido como Muddy Waters, fue un mï¿½sico de blues estadounidense, generalmente considerado el padre del Chicago blues. Su figura y su sonido fueron, del mismo modo, una de las mï¿½ximas inspiraciones para la escena del blues britï¿½nico, que comenzï¿½ a despuntar en el Reino Unido hacia principios de la dï¿½cada de 1960.\r\n\r\nMuddy Waters ha sido ubicado en el puesto # 17 de la lista de los mï¿½s grandes artistas de todos los tiempos realizado por la revista Rolling Stone.		   		   ', '250px-Muddy_Waters_(blues_musician)-cropped.jpg', 0, '4 de abril de 1913', '30 de abril de 1983', 0, '', '				   				   		   		   ', '				   				   		   		   ', ''),
+(11, 'Humor', 'Mafalda', 'El dibujante argentino Joaquï¿½n Salvador Lavado, Quino, es mucho mï¿½s que el padre de Mafalda. Es el rey del humor inteligente que pellizca, tratado desde la ternura, el respecto y la sensibilidad social. Lleva 54 aï¿½os analizando el mundo, denunciando las injusticias, criticando a los poderosos y sus estructuras, apoyando a los desvalidos y siendo el cronista de una evoluciï¿½n histï¿½rica cuyo futuro no considera que sea muy prometedor, tal y como declara en una entrevista a Pï¿½blico.   		   ', 'tiramafalda.jpg', 3, '', '', 0, 'http://blogs.publico.es/comics/568/el-genial-quino/', '', '', ''),
+(12, 'Humor', 'Patoruzito', 'Pamperito: Es el flete o el pingo de Patoruzito, es muy fiel a ï¿½l y puede sentir su presencia. Cuando escucha su voz se pone muy alegre y siempre va corriendo a ï¿½l. Es tan valiente como su amo.\r\nPatoruzito: ', 'personajesdepatoruzito.jpg', 0, '  ', '  ', 0, '', 'Protagonista de esta historieta es el mï¿½s valiente, fiel a sus convicciones y siempre del lado de la ley. Estï¿½ dispuesto a ayudar a encerrar en la cï¿½rcel a los bandidos, suele hacer muchas donaciones, generalmente al asilo de ancianos.\r\nIsidorito: Otro de los protagonistas de esta revista, aunque no estï¿½ en todas. Su presencia siempre nos hace reir, es divertido, miedoso y le gusta hacerse el vivo y siempre salir ganando. Siempre en las situaciones de riesgo quiere convencer al indio para volverse y hacer de cuenta como que no pasï¿½ nada.\r\nCoronel Caï¿½ones: Es el tï¿½o de Isidorito, es muy estricto y al igual que Patoruzito siempre estï¿½ al lado de la ley. Siempre trata de enderezar a Iisidorito.\r\nChupamiel: Es el nieto de Chiquizuel, en una revista mencionaba que si Patoruzito no pasaba las pruebas para ser cacique, ï¿½l serï¿½a el cacique ya que asï¿½ *lo indicaban las reglas de la tribu*. Le gusta mucho comer miel, siempre se lo ve con un pote de miel en la mano.\r\nChiquizuel: Abuelo de Chupamiel, es el mï¿½s anciano y el brujo de la tribu. Patoruzito le prohibiï¿½ la entrada a sus tierras, pero muchas veces estï¿½ presente para hacer de las suyas y aprovecha que su sobrino si puede ir, entonces va de incï¿½gnito.\r\nï¿½ancul: Trabaja para Patoruzito, aunque ya son como amigos porque siempre estï¿½ a su lado y lo aprecia mucho.\r\nChacha: Es la nodriza de Patoruzito, cuando ï¿½l naciï¿½ Patoruzek le encargï¿½ a Chacha que ayudarï¿½ en el cuidado del niï¿½o. Hace unas empanadas realmente deliciosas, y estï¿½ soltera aunque en una ediciï¿½n se encontraba enamorada del dueï¿½o de una hacienda vecina.', '', ''),
+(13, 'Otros', 'Pruebita', '				   				   				   				   		 texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto		   		   		   		   ', 'cuerpo.jpg', 3, 'TODAS LAS VOCES', '...TODAS', 0, '', '				   Otro Texto * Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *Otro Texto *    		   		   ', 'MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto * MAs Texto *    ', 'header.png'),
+(14, '', 'Repuestos para el mecanico', '				   				   Los mas variados repuestos para autos-motos-camiones   		   ', '123.png', 2, '', '', 0, 'http://mercadolibre.com', '				   				   		   Bombas de agua - correas - alternadores		   ', '				   				   		   		   ', ''),
+(15, 'Musica', 'Luis Salinas', 'ï¿½El es de otro mundo!', 'salinas_2.jpg', 0, '', '', 0, '', 'Su carrera internacional comenzï¿½  grabando un disco en Suecia,  luego dos en EE.UU. para el sello GRP con la  producciï¿½n de Tommy Li Puma y Ricky Peterson (Productor de Al Jarreau, George  Benson, Miles Davis, entre otros).\r\nSu carrera artï¿½stica y discogrï¿½fica se  ha ido consolidando en los principales escenarios del mundo: el UMEA en Suecia,  el Montreux Jazz Festival en Suiza, Festival Patrimonio de Cï¿½rcega en Francia,  Palabra de Guitarra Latina ï¿½ Gira por Espaï¿½a y Portugal; tambiï¿½n se presentï¿½  con su propuesta en Milï¿½n, Italia, entre  otros importantes escenarios y festivales.', '				   				   				   				Chucho Valdez  dice  Luis fue invitado a Centroamï¿½rica por el gran Chucho Valdez y tocï¿½ frente  a una audiencia de 30.000 personas en La Habana, Cuba.\r\nsobre Luis: Dudo que pueda haber dos guitarristas en el mundo que puedan  tocar y conocer tan bien la guitarra como Luis Salinas. ï¿½El es de otro mundo!		   	   				   				   				   		   		   		   		   		   		   		   ', 'salinas_1.jpg'),
+(17, 'Musica', 'Jimiï¿½ Hendrix ', 'James Marshall ï¿½Jimiï¿½ Hendrix (nacido Johnny Allen Hendrix ) fue un guitarrista, cantante y compositor estadounidense. A pesar de que su carrera solo durï¿½ cuatro aï¿½os, es considerado uno de los guitarristas mï¿½s influyentes de la historia del rock y uno de los mï¿½sicos mï¿½s famosos del siglo XX. El Salï¿½n de la Fama del Rock and Roll le describe como ï¿½indiscutiblemente el mï¿½sico mï¿½s grande de la historia del rockï¿½.1', 'Jimi_Hendrix_1967.png', 3, '27 de noviembre de 1', '18 de septiembre de ', 0, '', 'James Marshall ï¿½Jimiï¿½ Hendrix (nacido Johnny Allen Hendrix ) fue un guitarrista, cantante y compositor estadounidense. A pesar de que su carrera solo durï¿½ cuatro aï¿½os, es considerado uno de los guitarristas mï¿½s influyentes de la historia del rock y uno de los mï¿½sicos mï¿½s famosos del siglo XX. El Salï¿½n de la Fama del Rock and Roll le describe como ï¿½indiscutiblemente el mï¿½sico mï¿½s grande de la historia del rockï¿½.1', 'James Marshall ï¿½Jimiï¿½ Hendrix (nacido Johnny Allen Hendrix ) fue un guitarrista, cantante y compositor estadounidense. A pesar de que su carrera solo durï¿½ cuatro aï¿½os, es considerado uno de los guitarristas mï¿½s influyentes de la historia del rock y uno de los mï¿½sicos mï¿½s famosos del siglo XX. El Salï¿½n de la Fama del Rock and Roll le describe como ï¿½indiscutiblemente el mï¿½sico mï¿½s grande de la historia del rockï¿½.1', ''),
+(19, 'Deportes', 'Copa Libertadores', '		   ', 'cuerpo.jpg', 0, '', '', 0, '', '		   ', '		   ', 'header.png'),
+(20, 'Deportes', 'COPA ARGENTINA', '	PARTICIPAN TODAS LAS CAtegorias de la afa	   ', '', 2, 'SEMIFIANL ATL TUCUMA', 'LANUS', 0, 'http://www.afa.com', '		   ', '		   ', 'cumple.png'),
+(22, 'Portada', 'Inscripciones Abiertas 2018', 'Sres. Tutores: \r\n                       Se les informa que a partir de hoy Lunes 21/05/2018 estarÃ¡n abiertas las inscripciones de todos aquellos que deseen aprender en nuestras instalaciones o vÃ­a online ', '', 3, '', '', 0, 'https://www.smartinstitutes.com', '		   ', '		   ', 'Inscript.jpg'),
+(23, 'Portada', 'Ya se me estan acabando las ideas nene', 'Auto\r\n', 'autos.jpg', 3, '', '', 0, '', '', '		   ', ''),
+(24, 'Portada', 'srwhj4et5wujw462u4i2uh', '3umn536n53 bv57g5u5454gregokehq vgvuioerhviohe0oihgvio23hi0 gh03i4yhgb0i3i0hbv0i3h4ibh304ibjoefh0ibh3i0 rnbonrjh0ibhhjs kohb0ivhwri0hi0bg 0irwehbi0hwri0b h0iehwr0ihbi0 rhwi0hb09iehwi0bh i0erhb0iheri0bhi0er hbihr		   ', 'header.png', 3, '', '', 0, '', '3umn536n53bv57g5u54 54gre gokehqvgvuioerh viohe0oihgvio23hi0g h03i4yhgb0i3i 0hbv0i3h4ibh304ibjoefh0 ibh3i0rnbonrjh0ibhh jskohb0ivhwri0hi0bg0irw ehbi0hwri0 bh0iehwr0ihbi0rh wi0hb09iehwi0bhi0er hb0iheri0bhi0erhbihr		   ', '3umn53 6n53bv57g5u54 54gregokehqv gvuioerhvi ohe0oihgvio23hi0g h03i4yhgb0i3i0hbv0 i3h4ibh304ibjoefh0i bh3i0rnbonrjh0ibhhjskohb0i vhwri0hi0bg0irwehb i0hwri0bh0iehwr0ih bi0rhwi0hb09iehwi 0bhi0erhb0iheri0bhi0erhbihr		   ', 'header.png'),
+(25, 'Portada', 'HOOLA!! COMO ESTAN??', '	Bienvenidos a la pagina web de Nuestro instituto,espero que les guste y que nos pongan un 10 [Mensaje subliminal XD] Y ahora algo random:	   ', 'descarga.jpg', 3, '', '', 0, '', '		   ', '		   ', 'Hola.png'),
+(26, 'Logo', '', '		   ', 'autos.jpg', 0, '', '', 0, '', '		   ', '		   ', '');
 
 -- --------------------------------------------------------
 
@@ -218,6 +218,13 @@ CREATE TABLE `estudiante` (
   `user` varchar(50) COLLATE latin1_spanish_ci NOT NULL DEFAULT '''''',
   `passwd` varchar(32) COLLATE latin1_spanish_ci NOT NULL DEFAULT ''''''
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `estudiante`
+--
+
+INSERT INTO `estudiante` (`id`, `nombre`, `apellido`, `sexo`, `curso`, `email`, `user`, `passwd`) VALUES
+(1, 'Lucas', 'Spandre', 'Masculino', '1', 'spandrelucas@hotmail.com', 'ls', '81dc9bdb52d04dc20036dbd8313ed055');
 
 -- --------------------------------------------------------
 
@@ -376,13 +383,21 @@ CREATE TABLE `padres` (
   `dni` int(12) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
-  `alumno` varchar(40) NOT NULL,
+  `nom_alum` varchar(40) NOT NULL,
+  `apel_alum` varchar(40) NOT NULL,
   `telefono` int(12) NOT NULL,
   `direccion` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL DEFAULT 'ESPERA',
   `user` varchar(30) NOT NULL,
   `password` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `padres`
+--
+
+INSERT INTO `padres` (`id`, `dni`, `nombre`, `apellido`, `nom_alum`, `apel_alum`, `telefono`, `direccion`, `email`, `user`, `password`) VALUES
+(1, 25698452, 'Jorge', 'Spandre', 'Lucas', 'Spandre', 654687651, '123', 'jorgespandre@hotmail.com', 'js', '81dc9bdb52d04dc20036dbd8313ed055');
 
 -- --------------------------------------------------------
 
@@ -405,7 +420,9 @@ CREATE TABLE `personas` (
 --
 
 INSERT INTO `personas` (`id`, `nombre`, `apellido`, `email`, `user`, `passwd`, `rol`) VALUES
-(169, 'Santiago', 'Faverio', 'cuervo.santi@hotmail.com', 'fs', '81dc9bdb52d04dc20036dbd8313ed055', 'administrador');
+(1, 'Jorge', 'Spandre', 'jorgespandre@hotmail.com', 'js', '81dc9bdb52d04dc20036dbd8313ed055', 'Padre'),
+(169, 'Santiago', 'Faverio', 'cuervo.santi@hotmail.com', 'fs', '81dc9bdb52d04dc20036dbd8313ed055', 'administrador'),
+(170, 'Lucas', 'Spandre', 'spandrelucas@hotmail.com', 'ls', '81dc9bdb52d04dc20036dbd8313ed055', 'Estudiante');
 
 -- --------------------------------------------------------
 
@@ -534,7 +551,7 @@ ALTER TABLE `directivos`
 -- AUTO_INCREMENT de la tabla `estudiante`
 --
 ALTER TABLE `estudiante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `libros_d`
@@ -552,13 +569,13 @@ ALTER TABLE `log_user`
 -- AUTO_INCREMENT de la tabla `padres`
 --
 ALTER TABLE `padres`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

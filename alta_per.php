@@ -45,7 +45,7 @@ function mostrar(id) {
 <div id="estudiante" style="display: none;">
     <h2>Rellenar para estudiante</h2>
     <form action="abm_pe.php" method="post">
-        <input type="text" name="txtRol" value="estudiante" style="display: none;">
+        <input type="text" name="txtRol" value="Estudiante" style="display: none;">
         <label>Nombre</label>
         <input type="text" name="txtNombre"><br>
         <label>Apellido</label>
@@ -74,7 +74,7 @@ function mostrar(id) {
 <div id="docente" style="display: none;">
     <h2>Si eres docente...</h2>
     <form action="abm_pe.php" method="post">
-        <input type="text" name="txtRol" value="docente" style="display: none;">
+        <input type="text" name="txtRol" value="Docente" style="display: none;">
         <label>Nombre</label>
         <input type="text" name="txtNombre" /></p>
         <label>Apellido</label>
@@ -104,7 +104,7 @@ function mostrar(id) {
 <div id="directivo" style="display: none;">
     <h2>Si eres directivo...</h2>
     <form action="abm_pe.php" method="post">
-        <input type="text" name="txtRol" value="directivo" style="display: none;">
+        <input type="text" name="txtRol" value="Directivo" style="display: none;">
         <label>Nombre</label>
         <input type="text" name="txtNombre" /></p>
         <label>Apellido</label>

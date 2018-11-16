@@ -36,7 +36,7 @@ if ( !isset($_SESSION['username']) && !isset($_SESSION['userid']) ){
                  $user = mysqli_fetch_array($res);
                  $id_alum = $user['id'];
  
-            $sql = 'INSERT into padres (id_alum,dni,nombre,apellido,nom_alum,apel_alum,telefono,direccion,email,user,password) values("' . $id_alum .'","' . $_POST['rec_dni'].'","' . $_POST['rec_nombre'] .
+            $sql = 'INSERT into padres (id,dni,nombre,apellido,nom_alum,apel_alum,telefono,direccion,email,user,password) values("' . $id_alum .'","' . $_POST['rec_dni'].'","' . $_POST['rec_nombre'] .
 				  '","' . $_POST['rec_apellido'] .
 				  '","' . $_POST['rec_nom_alum'] .
                   '","' . $_POST['rec_apel_alum'] .
@@ -46,14 +46,18 @@ if ( !isset($_SESSION['username']) && !isset($_SESSION['userid']) ){
                   '","' . $_POST['rec_username'] .
                   '","' . md5($_POST['rec_userpass']) .
                   '")';
-            mysqli_query($sql);
-            $sql = 'INSERT into personas (nombre,apellido,email,user,passwd) values("'. $_POST['rec_nombre'] .
+            if (mysqli_query($idcnx,$sql)){
+              echo "Registro en padres realizado correctamente";
+            }else{
+              var_dump($sql);
+            }
+            $sql = 'INSERT into personas (id,nombre,apellido,email,user,passwd,rol) values("'. $id_alum .'","'. $_POST['rec_nombre'] .
                   '","' . $_POST['rec_apellido'] .
                   '","' . $_POST['rec_email'] .
                   '","' . $_POST['rec_username'] .
                   '","' . md5($_POST['rec_userpass']) .
                   '","Padre")';
-            mysqli_query($sql);
+            mysqli_query($idcnx,$sql);
                 
             echo 1;
               }
