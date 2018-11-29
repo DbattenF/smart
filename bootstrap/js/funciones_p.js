@@ -70,25 +70,25 @@
  
 
  
-function editar(id) {
+function editar(id,rol) {
    //alert('EDITAR '+id);
 		
     $.ajax({
         type: "POST",
         url: "edit_p.php",
-        data: {operacion: 'edicion', id_pers: id}
+        data: {operacion: 'edicion', id_pers: id, rol_pers: rol}
     }).done(function (html) {
         $('#capa_d').html(html);
     });
 }
 
-function borrar(id) {
+function borrar(id,rol) {
    //alert('BORRAR '+id);
 		
     $.ajax({
         type: "POST",
         url: "edit_p.php",
-        data: {operacion: 'baja', id_pers: id}
+        data: {operacion: 'baja', id_pers: id, rol_pers: rol}
     }).done(function (html) {
         $('#capa_d').html(html);
     });

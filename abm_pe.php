@@ -14,9 +14,6 @@ $operacion = '';
 
 $nombre = '';
 $apellido = '';
-$sexo = '';
-$dni = '';
-$carrera = '';
 $telefono="";
 $email="";
 $user="";
@@ -24,7 +21,7 @@ $rol="";
 
 if (!empty($_POST)){
 	$rol=$_POST['txtRol'];
-	if ($rol=='estudiante'){
+	if ($rol=='Estudiante'){
 		$estudiante->nombre=$_POST['txtNombre'];
 		$estudiante->apellido=$_POST['txtApellido'];
 		$estudiante->sexo=$_POST['txtSexo'];
@@ -34,7 +31,7 @@ if (!empty($_POST)){
 		$estudiante->passwd=md5($_POST['txtpasswd']);		
 		$estudiante->guardar();
 	}
-	if ($rol=='docente'){
+	if ($rol=='Docente'){
 		$directivo->nombre=$_POST['txtNombre'];
 		$directivo->apellido=$_POST['txtApellido'];
 		$directivo->telefono=$_POST['txtTelefono'];
@@ -46,7 +43,7 @@ if (!empty($_POST)){
 		$directivo->passwd=md5($_POST['txtpasswd']);		
 		$directivo->guardar();
 	}
-	if ($rol=='directivo'){
+	if ($rol=='Directivo'){
 		$directivo->nombre=$_POST['txtNombre'];
 		$directivo->apellido=$_POST['txtApellido'];
 		$directivo->telefono=$_POST['txtTelefono'];
@@ -68,19 +65,11 @@ if (!empty($_POST)){
 if ($operacion == 'actualizar' && isset($_GET['id_pers'])){
 	$persona->nombre=$_POST['txtNombre'];
 	$persona->apellido=$_POST['txtApellido'];
-	$persona->sexo=$_POST['txtSexo'];
-	$persona->dni=$_POST['txtDni'];
-	$persona->carrera=$_POST['txtCarrera'];
 	$persona->telefono=$_POST['txtTelefono'];
 	$persona->email=$_POST['txtEmail'];
 	$persona->user=$_POST['txtUser'];
 	$persona->rol=$_POST['txtRol'];
-	if($_POST['txtPass'] != "" && $_POST['txtPass1'] != "" && ($_POST['txtPass'] == $_POST['txtPass1'])){
-	  $persona->passwd=$_POST['txtPass'];
-	}
-    else{
-	  $persona->passwd="";
-	}
+	$persona->passwd="";
 	
 	$persona->actualizar($_GET['id_pers']);
 }
@@ -97,9 +86,6 @@ if ($operacion == 'edicion' && isset($_GET['id_usuario'])) {
 
     $nombre = $datos['¨nombre'];
     $apellido = $datos['apellido'];
-    $sexo = $datos['sexo'];
-    $dni = $datos['dni'];
-    $carrera = $datos['carrera'];
 }
    
 ?>

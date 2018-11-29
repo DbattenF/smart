@@ -29,8 +29,7 @@ class Persona{
 			if($this->passwd ==""){
 			  $pass=md5("1234");
 			}
-			$sql="update personas set nombre='$this->nombre', apellido='$this->apellido',sexo='$this->sexo'
-			,dni='$this->dni',carrera='$this->carrera',telefono='$this->telefono'
+			$sql="update personas set nombre='$this->nombre', apellido='$this->apellido',telefono='$this->telefono'
 			,email='$this->email',user='$this->user',passwd='$pass'
 			,rol='$this->rol' where id = $nro";
 			//mysql_query($sql); // ejecuta la consulta para actualizar

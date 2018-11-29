@@ -24,7 +24,7 @@ class Estudiante{
  
  function actualizar($nro=0)	// actualiza el estudiante cargado en los atributos
 	{
-	$sql="update estudiante set nombre='$this->nombre', apellido='$this->apellido',sexo='$this->sexo',matricula='$this->matricula',carrera='$this->carrera' where id = $nro";
+	$sql="update estudiante set nombre='$this->nombre', apellido='$this->apellido',sexo='$this->sexo',curso='$this->curso',email='$this->email',user='$this->user',passwd='$this->passwd' where id = $nro";
 	//mysql_query($sql); // ejecuta la consulta para actualizar
 	$objConn = new Conexion();
     $objConn->enlace->query($sql);
@@ -65,7 +65,7 @@ function traer_datos($nro=0) // declara el constructor, si trae el numero de est
  
  
  static function buscar($str){
-    $sql="select * from estudiante where carrera like '%$str%' or nombre like '%$str%' or apellido like '%$str%' or id='$str' or matricula='$str'";
+    $sql="select * from estudiante where curso like '%$str%' or nombre like '%$str%' or apellido like '%$str%' or id='$str'";
     //$rs=mysql_query($sql);
 	$objConn = new Conexion();
 	$rs=$objConn->enlace->query($sql);

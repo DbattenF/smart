@@ -5,7 +5,6 @@ include_once("libreria/persona.php");
 $str_b =  $_POST['b'];
 //echo $str_b;
 $pers=Persona::buscar($str_b);
-
 ?>
 <?php
 if (isset($pers)){
@@ -32,6 +31,7 @@ if (isset($pers)){
 	  
 	  <?php
 		  foreach($pers as $personas){
+		  	$rol = $personas['rol'];
 		   echo "
 		   <tr>
 		   <td>$personas[id]</td>
@@ -40,7 +40,7 @@ if (isset($pers)){
 		   <td>$personas[user]</td>
 		   <td>$personas[rol]</td>";
 	  
-	     echo '<td><button class="btn btn-primary btn-xs" onclick="editar(' . $personas['id'] . ')" >Editar</button></td>';
+	     echo '<td><button class="btn btn-primary btn-xs" onclick="editar('.$personas['id'].')" >Editar</button></td>';
 		 echo '<td><button class="btn btn-primary btn-xs" onclick="borrar(' . $personas['id'] . ')" >Borrar</button></td>';
          
 		  echo " </tr> ";
